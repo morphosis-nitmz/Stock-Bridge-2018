@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{% include 'base/css.html' %}
+		{% include 'base/js.html' %}
+		{% block base_head %}{% endblock %}
+	</head>
+	<body>
+
+		<div id="wrap">
+			<div id="main" class="clear-top">
+				{% if messages %}
+				<div class="container mt-3">
+					<div class="alert alert-success messages">
+						{% for message in messages %}
+						<span{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+								{{ message }}
+						</span>
+					</div>
+						{% endfor %}
+				</div>
+				{% endif %}
+
+				<div class="container">
+					{% block content %}{% endblock %}
+				</div>
+
+				<div class="container-fluid">
+					{% block content_fluid %}{% endblock %}
+				</div>
+			</div>
+		</div>
+
+		{% block javascript %}{% endblock %}
+
+	</body>
+</html>
