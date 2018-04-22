@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^account/', include('accounts.urls', namespace='account')),
+    url(r'^accounts/', include('accounts.passwords.urls')),
     url(r'^accounts/$', RedirectView.as_view(url='/account')),
     url(r'^admin/', admin.site.urls),
 ]
