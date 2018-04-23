@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # custom apps
-    'accounts'
+    'accounts',
+    'market'
 ]
 
 # Replace the built-in values
