@@ -16,14 +16,14 @@
 			<div id="main" class="clear-top">
 				{% if messages %}
 				<div class="container mt-3">
-					<div class="alert alert-success messages">
-						{% for message in messages %}
-						<span{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-								{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-								{{ message }}
-						</span>
-					</div>
-						{% endfor %}
+					{% for message in messages %}
+						<div class="alert alert-success messages">
+							<span {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+									{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+									{{ message }}
+							</span>
+						</div>
+					{% endfor %}
 				</div>
 				{% endif %}
 

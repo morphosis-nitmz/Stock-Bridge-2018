@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block base_head %}
+<title>Transaction</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col mx-auto my-3">
+        <h1 class="text-center">{{ object.name }}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <h3>{{ object.code }}</h3>
+    </div>
+    <div class="col">
+        Cap: {{ object.cap }}<br>
+        Total Stocks: {{ object.stocks_offered }}<br>
+        Stocks Remaining: {{ object.stocks_remaining }}<br>
+        Current Price per stock: {{ object.cmp }}
+    </div>
+</div>
+<div class="row">
+    <div class="col mx-auto">
+        <form method="POST" action="{% url 'market:transaction' object.code %}"> {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Transact</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

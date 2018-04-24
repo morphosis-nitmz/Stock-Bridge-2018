@@ -23,6 +23,34 @@ class Company(models.Model):
     def __str__(self):
         return self.name
 
+    def user_buy_stocks(self, quantity):
+        self.stocks_remaining -= quantity
+        self.cmp = self.cmp / 2 + (self.cmp * quantity) / self.stocks_offered
+        self.save()
+
+    def user_sell_stocks(self, quantity):
+        self.stocks_remaining += quantity
+        self.cmp = self.cmp / 2 - (self.cmp * quantity) / self.stocks_offered
+        self.save()
+
+
+class TransactionManager(models.Manager):
+
+    def create(self, user, company, num_stocks, price, mode):
+        if mode == 'buy':
+            if num_stocks > company.stocks_remaining:
+                return None
+            company.user_buy_stocks(num_stocks)
+            user.buy_stocks(num_stocks, price)
+        elif mode == 'sell':
+            if num_stocks * company.cmp > user.net_worth:
+                return None
+            company.user_sell_stocks(num_stocks)
+            user.sell_stocks(num_stocks, price)
+        obj = Transaction(user=user, company=company, num_stocks=num_stocks, price=price, mode=mode)
+        obj.save(force_insert=True)
+        return obj
+
 
 class Transaction(models.Model):
     user = models.ForeignKey(User)
@@ -32,6 +60,8 @@ class Transaction(models.Model):
     mode = models.CharField(max_length=10, choices=TRANSACTION_MODES)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    objects = TransactionManager()
 
     def __str__(self):
         return '{user}: {company} - {time}'.format(

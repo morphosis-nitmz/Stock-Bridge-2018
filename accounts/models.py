@@ -105,6 +105,14 @@ class User(AbstractBaseUser):
     def is_admin(self):
         return self.admin
 
+    def buy_stocks(self, quantity, price):
+        self.net_worth += quantity * price
+        self.save()
+
+    def sell_stocks(self, quantity, price):
+        self.net_worth -= quantity * price
+        self.save()
+
 
 class EmailActivationQuerySet(models.query.QuerySet):
 

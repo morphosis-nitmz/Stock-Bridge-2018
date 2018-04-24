@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block base_head %}
+<title>Select</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-center">Select Your Company</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mx-auto">
+        <form method="POST" action="{% url 'market:company_select' %}"> {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Select</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
