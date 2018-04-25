@@ -1,4 +1,5 @@
 from datetime import timedelta
+from decimal import Decimal
 
 from django.conf import settings
 from django.db import models
@@ -14,6 +15,7 @@ from stock_bridge.utils import unique_key_generator
 
 
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
+DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
 
 
 class UserManager(BaseUserManager):
@@ -65,8 +67,7 @@ class User(AbstractBaseUser):
     username = models.CharField(unique=True, max_length=120)
     email = models.EmailField(unique=True, max_length=255)
     full_name = models.CharField(max_length=255, blank=True, null=True)
-    loan = models.DecimalField(max_digits=20, decimal_places=2, default=10000.00)
-    net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=loan)
+    net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from decimal import Decimal
 
 from stock_bridge import credentials
 
@@ -46,6 +47,8 @@ MANAGERS = (
 )
 ADMINS = MANAGERS
 
+DEFAULT_LOAN_AMOUNT = Decimal(10000.00)
+
 
 # Application definition
 
@@ -59,7 +62,8 @@ INSTALLED_APPS = [
 
     # custom apps
     'accounts',
-    'market'
+    'market',
+    'bank'
 ]
 
 # Replace the built-in values
