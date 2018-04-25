@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Loan</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center">Issue Loan</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        Amount: INR 10,000
+    </div>
+    <form method="POST" action="{% url 'bank:issue_loan' %}"> {% csrf_token %}
+        <button type="submit" class="btn btn-success">Issue</button>
+    </form>
+</div>
+
+{% endblock %}
