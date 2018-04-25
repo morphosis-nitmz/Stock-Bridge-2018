@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
+RATE_OF_INTEREST = getattr(settings, 'RATE_OF_INTEREST', Decimal(0.15))
 
 
 class BankAccount(models.Model):
@@ -31,6 +32,12 @@ class BankAccount(models.Model):
         self.user.save()
         self.loan = 0
         self.save()
+
+    def deduct_interest(self):
+        amount = (self.loan * (Decimal(1.0) + RATE_OF_INTEREST)) / Decimal(12.0)  # After 1 month
+        compound_interest = abs(amount - self.loan)
+        self.user.net_worth -= compound_interest
+        self.user.save()
 
 
 def user_created_post_save_receiver(sender, instance, created, *args, **kwargs):

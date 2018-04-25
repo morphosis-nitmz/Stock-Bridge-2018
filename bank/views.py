@@ -22,4 +22,10 @@ class IssueLoanView(LoginRequiredMixin, View):
 def deduct_loan(request):
     bank_account = BankAccount.objects.get(user=request.user)
     bank_account.withdraw_loan()
-    return HttpResponse('Deducted', status=200)
+    return HttpResponse('Loan Deducted', status=200)
+
+
+def deduct_interest(request):
+    bank_account = BankAccount.objects.get(user=request.user)
+    bank_account.deduct_interest()
+    return HttpResponse('Interest Deducted', status=200)
