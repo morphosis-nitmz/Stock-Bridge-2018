@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
@@ -43,3 +43,10 @@ class CompanyTransactionView(LoginRequiredMixin, View):
             'object': company,
             'form': StockTransactionForm()
         })
+
+
+class UserTransactionHistoryView(LoginRequiredMixin, ListView):
+    template_name = 'market/user_transaction_history.html'
+
+    def get_queryset(self, *args, **kwargs):
+        return Transaction.objects.get_by_user(user=self.request.user)

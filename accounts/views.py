@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, get_user_model
+from django.contrib.auth import get_user_model
 from django.views.generic import ListView, DetailView, FormView, CreateView, View
 from django.views.generic.edit import FormMixin
 from django.utils.safestring import mark_safe
@@ -9,7 +9,8 @@ from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation
-from stock_bridge.mixins import LoginRequiredMixin, AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin
+from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin
+
 
 User = get_user_model()
 
