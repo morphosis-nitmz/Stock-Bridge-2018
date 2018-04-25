@@ -64,6 +64,7 @@ class TransactionManager(models.Manager):
         return self.get_queryset().get_by_user_and_company(user, company)
 
     def create(self, user, company, num_stocks, price, mode):
+        # check for negative quantity
         if mode == 'buy':
             if num_stocks > company.stocks_remaining:
                 return None

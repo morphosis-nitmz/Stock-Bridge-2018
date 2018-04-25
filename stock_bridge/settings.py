@@ -66,7 +66,8 @@ INSTALLED_APPS = [
     # custom apps
     'accounts',
     'market',
-    'bank'
+    'bank',
+    'record'
 ]
 
 # Replace the built-in values
