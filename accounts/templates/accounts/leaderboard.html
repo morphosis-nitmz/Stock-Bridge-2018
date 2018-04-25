@@ -27,13 +27,13 @@
                         {% if object.username == username %}
                             <tr style="background-color:rgb(224, 129, 129)">
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center"><a href="#">{{ object.user.username }}</a></td>
+                                <td class="text-center"><a href="#">{{ object.username }}</a></td>
                                 <td class="text-center">{{ object.net_worth }}</td>
                             </tr>
                         {% else %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center"><a href="#">{{ object.user.username }}</a></td>
+                                <td class="text-center"><a href="#">{{ object.username }}</a></td>
                                 <td class="text-center">{{ object.net_worth }}</td>
                             </tr>
                         {% endif %}

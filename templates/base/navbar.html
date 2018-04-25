@@ -3,6 +3,7 @@
 {% url 'register' as register_url %}
 {% url 'logout' as logout_url %}
 {% url 'transaction_history' as transaction_history_url %}
+{% url 'leaderboard' as leaderboard_url %}
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
 	<div class="container">
@@ -18,6 +19,9 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item {% if request.path == home_url %}active{% endif %}">
 					<a class="nav-link" href="{{ home_url }}">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item {% if request.path == leaderboard_url %}active{% endif %}">
+					<a class="nav-link" href="{{ leaderboard_url }}">Leaderboard</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ml-auto">

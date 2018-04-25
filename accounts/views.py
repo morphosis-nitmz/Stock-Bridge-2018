@@ -15,6 +15,11 @@ from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, 
 User = get_user_model()
 
 
+class LeaderBoardView(ListView):
+    template_name = 'accounts/leaderboard.html'
+    queryset = User.objects.all()
+
+
 class AccountEmailActivateView(FormMixin, View):
     success_url = '/login/'
     form_class = ReactivateEmailForm
