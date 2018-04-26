@@ -6,7 +6,7 @@ from django.contrib.auth.views import LogoutView
 from django.views.generic import RedirectView
 
 from .views import home
-from accounts.views import RegisterView, LoginView, LeaderBoardView
+from accounts.views import RegisterView, LoginView, LeaderBoardView, ProfileView
 from market.views import UserTransactionHistoryView
 
 
@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
+    url(r'^profile/(?P<username>[a-z]+)/$', ProfileView.as_view(), name='profile'),
     url(r'^account/', include('accounts.urls', namespace='account')),
     url(r'^accounts/', include('accounts.passwords.urls')),
     url(r'^accounts/$', RedirectView.as_view(url='/account')),

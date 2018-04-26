@@ -9,10 +9,21 @@ from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation
-from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin
+from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin
 
 
 User = get_user_model()
+
+
+class ProfileView(LoginRequiredMixin, DetailView):
+    template_name = 'accounts/profile.html'
+
+    def get_object(self, *args, **kwargs):
+        username = self.kwargs.get('username')
+        instance = User.objects.filter(username=username).first()
+        if instance is None:
+            raise Http404('User not found')
+        return instance
 
 
 class LeaderBoardView(ListView):
