@@ -26,6 +26,10 @@ class Company(models.Model):
     def __str__(self):
         return self.name
 
+    def calculate_change(self, old_price):
+        self.change = ((self.cmp - old_price) / old_price) * Decimal(100.00)
+        self.save()
+
     def user_buy_stocks(self, quantity):
         self.stocks_remaining -= quantity
         self.cmp = self.cmp / Decimal(2.0) + (self.cmp * quantity) / self.stocks_offered
@@ -64,7 +68,8 @@ class TransactionManager(models.Manager):
         return self.get_queryset().get_by_user_and_company(user, company)
 
     def create(self, user, company, num_stocks, price, mode):
-        # check for negative quantity
+        if num_stocks <= 0:
+            return None
         if mode == 'buy':
             if num_stocks > company.stocks_remaining:
                 return None
@@ -78,6 +83,7 @@ class TransactionManager(models.Manager):
         obj = Transaction(user=user, company=company, num_stocks=num_stocks, price=price, mode=mode)
         if obj is not None:
             obj.save(force_insert=True)
+        company.calculate_change(price)
         return obj
 
 

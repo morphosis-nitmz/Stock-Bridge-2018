@@ -7,9 +7,11 @@
 
 {% block content %}
 
+{% include 'base/carousel.html' %}
+
 <div class="row">
     <div class="col-12 px-auto">
-        <button class="btn btn-link">Purchase</button>
+        <a href="{% url 'market:company_select' %}">Purchase</a>
     </div>
 </div>
 
