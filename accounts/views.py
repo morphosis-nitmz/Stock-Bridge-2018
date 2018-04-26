@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation
 from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin
+from record.models import InvestmentRecord
 
 
 User = get_user_model()
@@ -24,6 +25,14 @@ class ProfileView(LoginRequiredMixin, DetailView):
         if instance is None:
             raise Http404('User not found')
         return instance
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProfileView, self).get_context_data(*args, **kwargs)
+        qs = InvestmentRecord.objects.filter(user=self.request.user)
+        if qs.count() >= 1:
+            context['investments'] = qs
+        print(qs)
+        return context
 
 
 class LeaderBoardView(ListView):

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block base_head %}
 <title>Profile</title>
@@ -15,5 +16,38 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-12 text-center my-5">
+        <h3>Net Worth: INR {{ object.net_worth|intcomma }}</h3>
+        {{ investment }}
+    </div>
+</div>
+{% if investments %}
+    <div class="row">
+        <div class="col-12">
+            <h3>Investment Record:</h3>
+        </div>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">S.no</th>
+                        <th class="text-center">Company</th>
+                        <th class="text-center">Stocks Purchased</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for investment in investments %}
+                        <tr>
+                            <td class="text-center">{{ forloop.counter }}</td>
+                            <td class="text-center">{{ investment.company }}</td>
+                            <td class="text-center">{{ investment.stocks }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endif %}
 
 {% endblock %}

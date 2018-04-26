@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth import get_user_model
 
-from market.models import Company
+from market.models import Company, Transaction
 
 
 User = get_user_model()
@@ -27,3 +27,12 @@ def post_save_user_create_receiver(sender, instance, created, *args, **kwargs):
             obj = InvestmentRecord.objects.create(user=instance, company=company)
 
 post_save.connect(post_save_user_create_receiver, sender=User)
+
+
+def post_save_transaction_create_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        investment_obj = InvestmentRecord.objects.filter(user=instance.user, company=instance.company).first()
+        investment_obj.stocks = instance.num_stocks
+        investment_obj.save()
+
+post_save.connect(post_save_user_create_receiver, sender=Transaction)
