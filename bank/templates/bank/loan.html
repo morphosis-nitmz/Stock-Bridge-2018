@@ -1,23 +1,41 @@
 {% extends 'base.html' %}
 
 {% block base_head %}
-<title>Loan</title>
+<title>Bank</title>
 {% endblock %}
 
 {% block content %}
 
 <div class="row">
-    <div class="col-12">
-        <h1 class="text-center">Issue Loan</h1>
+    <div class="col-12 mt-3 mb-5">
+        <h1 class="text-center">World Bank</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        Amount: INR 10,000
+        <h3 class="text-center">Credit Loan</h3>
     </div>
-    <form method="POST" action="{% url 'bank:issue_loan' %}"> {% csrf_token %}
-        <button type="submit" class="btn btn-success">Issue</button>
-    </form>
+    <div class="col-12">
+        Amount: INR 10,000
+        <form method="POST" action="{% url 'bank:loan' %}"> {% csrf_token %}
+            <input type="hidden" name="mode" value="issue">
+            <button type="submit" class="btn btn-success">Issue</button>
+        </form>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center">Loan Due</h3>
+    </div>
+    <div class="col-12">
+        Amount Due: INR {{ account.loan }}<br>
+        Pay a INR 10,000 installment
+        <form method="POST" action="{% url 'bank:loan' %}"> {% csrf_token %}
+            <input type="hidden" name="mode" value="pay">
+            <button type="submit" class="btn btn-success">Repay</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

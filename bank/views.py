@@ -7,16 +7,27 @@ from .models import BankAccount
 from stock_bridge.mixins import LoginRequiredMixin
 
 
-class IssueLoanView(LoginRequiredMixin, View):
+class BankLoanView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'bank/loan.html', {'user': request.user})
+        account = BankAccount.objects.get(user=request.user)
+        return render(request, 'bank/loan.html', {
+            'user': request.user,
+            'account': account
+        })
 
     def post(self, request, *args, **kwargs):
+        mode = request.POST.get('mode')
         bank_account = BankAccount.objects.get(user=request.user)
-        bank_account.issue_loan()
-        messages.success(request, 'Loan has been issued.')
-        return redirect('bank:issue_loan')
+        if mode == 'issue':
+            bank_account.issue_loan()
+            messages.success(request, 'Loan has been issued.')
+        elif mode == 'pay':
+            if bank_account.get_installment():
+                messages.success(request, 'Installment paid!')
+            else:
+                messages.error(request, 'Minimum installment amount has to be INR 10,000')
+        return redirect('bank:loan')
 
 
 def deduct_loan(request):
