@@ -64,11 +64,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
+    # 3rd party
+    'django_cron',
+
     # custom apps
     'accounts',
     'market',
     'bank',
     'record'
+]
+
+CRON_CLASSES = [
+    "record.cron.CronCreateCMPRecord"
 ]
 
 # Replace the built-in values
