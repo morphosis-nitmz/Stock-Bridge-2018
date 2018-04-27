@@ -75,7 +75,8 @@ INSTALLED_APPS = [
 ]
 
 CRON_CLASSES = [
-    "record.cron.CronCreateCMPRecord"
+    'stock_bridge.cron.CronCreateCMPRecord',
+    'stock_bridge.cron.CronLoanInterestDeduct'
 ]
 
 # Replace the built-in values
