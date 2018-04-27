@@ -5,14 +5,31 @@
 <title>Home</title>
 {% endblock %}
 
-{% block content %}
+{% block javascript %}
 
-{% include 'base/carousel.html' %}
-
-<div class="row">
-    <div class="col-12 px-auto">
-        <a href="{% url 'market:company_select' %}">Purchase</a>
-    </div>
+<div class="image-home jumbotron">
+  <div class="heading" font-family="FoughtKnight">
+    <h1>STOCK BRIDGE</h1>
+  </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-2"></div>
+    <div class="col">
+      <p>Keeping in view the real thrill of the market monotony, we are here with the Virtual Simulation of the same thrill and adrenaline
+        rush through the event under the banner of MORPHOSIS. The virtual share market enables the participants to trade, buy,
+        sell mortgage and showcase their rationality, their mettle against competitive decision making under pressure. The full
+        time active virtual market will be a platform to showcase your inferential, pressure-handling capability. So, be a part
+        of it to experience the Raising Spirit of Competitiveness and explore your ability of Decision Making.
+      </p>
+    </div>
+    <div class="col-12 col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <a href="{% url 'market:company_select' %}"><button class="btn btn-primary">Purchase</button></a>
+    </div>
+  </div>
 
 {% endblock %}

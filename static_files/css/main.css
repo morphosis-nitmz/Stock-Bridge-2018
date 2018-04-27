@@ -1,0 +1,16 @@
+.image-home {
+    background: url("https://entefy.com/uploads/editor/071f8a36715a8a6b7f7ded54074cc8c6.gif");;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    opacity: 1;
+}
+
+.heading {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 200px;
+    font-family: 'foughtknight';
+    src: url('../static_files/fonts/foughtknight.ttf') format("truetype"), local('foughtknight');
+}
