@@ -55,7 +55,8 @@ class CompanyTransactionView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         company = Company.objects.get(code=kwargs.get('code'))
-        stocks_owned = InvestmentRecord.objects.get(user=request.user, company=company).stocks
+        obj, created = InvestmentRecord.objects.get_or_create(user=request.user, company=company)
+        stocks_owned = obj.stocks
         return render(request, 'market/transaction_market.html', {
             'object': company,
             'stocks_owned': stocks_owned,

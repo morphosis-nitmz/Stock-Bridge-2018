@@ -105,7 +105,7 @@ class TransactionManager(models.Manager):
 
 class Transaction(models.Model):
     user = models.ForeignKey(User)
-    # company = models.ForeignKey(Company)
+    company = models.ForeignKey(Company)
     num_stocks = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     mode = models.CharField(max_length=10, choices=TRANSACTION_MODES)
@@ -164,7 +164,9 @@ post_save.connect(post_save_user_create_receiver, sender=User)
 
 def post_save_transaction_create_receiver(sender, instance, created, *args, **kwargs):
     if created:
-        investment_obj = InvestmentRecord.objects.filter(user=instance.user, company=instance.company).first()
+        investment_obj, obj_created = InvestmentRecord.objects.get_or_create(
+            user=instance.user, company=instance.company
+        )
         if instance.mode == 'buy':
             investment_obj.stocks += instance.num_stocks
         elif instance.mode == 'sell':
