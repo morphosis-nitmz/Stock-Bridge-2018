@@ -1,3 +1,4 @@
+import numpy as np
 from decimal import Decimal
 
 from django.db import models
@@ -12,11 +13,18 @@ TRANSACTION_MODES = (
     ('sell', 'SELL')
 )
 
+CAP_TYPES = (
+    ('small cap', 'Small Cap'),
+    ('mid cap', 'Mid Cap'),
+    ('large cap', 'Large Cap')
+)
+
 
 class Company(models.Model):
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=20, unique=True)
     cap = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
+    cap_type = models.CharField(max_length=20, choices=CAP_TYPES)
     stocks_offered = models.IntegerField(default=0)
     stocks_remaining = models.IntegerField(default=stocks_offered)
     cmp = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
@@ -32,12 +40,12 @@ class Company(models.Model):
 
     def user_buy_stocks(self, quantity):
         self.stocks_remaining -= quantity
-        self.cmp = self.cmp / Decimal(2.0) + (self.cmp * quantity) / self.stocks_offered
+        self.cmp = self.cmp / Decimal(2.0) + (self.cmp * Decimal(quantity)) / self.stocks_offered
         self.save()
 
     def user_sell_stocks(self, quantity):
         self.stocks_remaining += quantity
-        self.cmp = self.cmp / Decimal(2.0) - (self.cmp * quantity) / self.stocks_offered
+        self.cmp = self.cmp / Decimal(2.0) - (self.cmp * Decimal(quantity)) / self.stocks_offered
         self.save()
 
 
@@ -97,7 +105,7 @@ class TransactionManager(models.Manager):
 
 class Transaction(models.Model):
     user = models.ForeignKey(User)
-    company = models.ForeignKey(Company)
+    # company = models.ForeignKey(Company)
     num_stocks = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     mode = models.CharField(max_length=10, choices=TRANSACTION_MODES)
@@ -120,6 +128,17 @@ def pre_save_transaction_receiver(sender, instance, *args, **kwargs):
     instance.user_net_worth = instance.user.net_worth
 
 pre_save.connect(pre_save_transaction_receiver, sender=Transaction)
+
+
+def post_save_transaction_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        net_worth_list = [
+            transaction.user_net_worth for transaction in Transaction.objects.filter(user=instance.user)
+        ]
+        instance.user.coeff_of_variation = Decimal(np.std(net_worth_list) / np.mean(net_worth_list))
+        instance.user.save()
+
+post_save.connect(post_save_transaction_receiver, sender=Transaction)
 
 
 class InvestmentRecord(models.Model):

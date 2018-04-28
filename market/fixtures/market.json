@@ -1,0 +1,137 @@
+[
+{
+  "model": "market.company",
+  "pk": 1,
+  "fields": {
+    "code": "NCSFT",
+    "name": "Nicrosoft",
+    "cap": "100000000000.00",
+    "cap_type": "large cap",
+    "stocks_offered": 100000,
+    "stocks_remaining": 0,
+    "cmp": "115.74",
+    "timestamp": "2018-04-28T05:10:03.092Z",
+    "updated": "2018-04-28T05:10:06.466Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 2,
+  "fields": {
+    "code": "DGL",
+    "name": "Doogle",
+    "cap": "150000000000.00",
+    "cap_type": "large cap",
+    "stocks_offered": 100000,
+    "stocks_remaining": 0,
+    "cmp": "120.00",
+    "timestamp": "2018-04-28T05:11:04.035Z",
+    "updated": "2018-04-28T05:11:04.035Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 3,
+  "fields": {
+    "code": "SYM",
+    "name": "Symfosis",
+    "cap": "80000000000.00",
+    "cap_type": "large cap",
+    "stocks_offered": 70000,
+    "stocks_remaining": 0,
+    "cmp": "175.36",
+    "timestamp": "2018-04-28T05:11:58.668Z",
+    "updated": "2018-04-28T05:11:58.668Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 4,
+  "fields": {
+    "code": "OIL",
+    "name": "Oil Wells",
+    "cap": "45000000000.00",
+    "cap_type": "mid cap",
+    "stocks_offered": 50000,
+    "stocks_remaining": 0,
+    "cmp": "250.21",
+    "timestamp": "2018-04-28T05:13:12.769Z",
+    "updated": "2018-04-28T05:13:12.769Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 5,
+  "fields": {
+    "code": "KMCG",
+    "name": "KMCG",
+    "cap": "42000000000.00",
+    "cap_type": "mid cap",
+    "stocks_offered": 45000,
+    "stocks_remaining": 0,
+    "cmp": "260.11",
+    "timestamp": "2018-04-28T05:13:55.903Z",
+    "updated": "2018-04-28T05:13:55.903Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 6,
+  "fields": {
+    "code": "SUD",
+    "name": "Suduki",
+    "cap": "40000000000.00",
+    "cap_type": "mid cap",
+    "stocks_offered": 30000,
+    "stocks_remaining": 0,
+    "cmp": "300.33",
+    "timestamp": "2018-04-28T05:15:56.147Z",
+    "updated": "2018-04-28T05:15:56.147Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 7,
+  "fields": {
+    "code": "FUR",
+    "name": "Furnilon",
+    "cap": "800000000.00",
+    "cap_type": "small cap",
+    "stocks_offered": 5000,
+    "stocks_remaining": 0,
+    "cmp": "700.21",
+    "timestamp": "2018-04-28T05:16:56.926Z",
+    "updated": "2018-04-28T05:16:56.926Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 8,
+  "fields": {
+    "code": "NLC",
+    "name": "Nelcrow",
+    "cap": "700000000.00",
+    "cap_type": "small cap",
+    "stocks_offered": 2000,
+    "stocks_remaining": 0,
+    "cmp": "750.21",
+    "timestamp": "2018-04-28T05:17:34.468Z",
+    "updated": "2018-04-28T05:17:34.468Z"
+  }
+},
+{
+  "model": "market.company",
+  "pk": 9,
+  "fields": {
+    "code": "DPS",
+    "name": "Dipsim",
+    "cap": "500000000.00",
+    "cap_type": "small cap",
+    "stocks_offered": 1000,
+    "stocks_remaining": 0,
+    "cmp": "900.14",
+    "timestamp": "2018-04-28T05:18:11.990Z",
+    "updated": "2018-04-28T05:18:11.991Z"
+  }
+}
+]

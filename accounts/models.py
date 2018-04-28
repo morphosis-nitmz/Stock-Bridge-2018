@@ -68,6 +68,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(unique=True, max_length=255)
     full_name = models.CharField(max_length=255, blank=True, null=True)
     net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
+    coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
@@ -110,11 +111,11 @@ class User(AbstractBaseUser):
         return self.admin
 
     def buy_stocks(self, quantity, price):
-        self.net_worth += quantity * price
+        self.net_worth += Decimal(quantity) * price
         self.save()
 
     def sell_stocks(self, quantity, price):
-        self.net_worth -= quantity * price
+        self.net_worth -= Decimal(quantity) * price
         self.save()
 
 
