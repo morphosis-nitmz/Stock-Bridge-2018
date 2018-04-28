@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block base_head %}
-<title>Transaction History</title>
+<title>Leaderboard</title>
 {% endblock %}
 
 {% block content %}
 
 <div class="row">
 	<div class="col-12 my-3">
-		<h1 class="text-center">LeaderBoard</h1>
+		<h1 class="heading">LeaderBoard</h1>
 	</div>
 </div>
 <div class="jumbotron" style="padding-top: 15px;padding-left: 10px ;padding-bottom: 5px;margin-bottom:10px;margin-top:8px; ">
@@ -24,17 +24,25 @@
                 </thead>
                 <tbody>
                     {% for object in object_list %}
-                        {% if object.username == username %}
+                        {% if object.username == request.user.username %}
                             <tr style="background-color:rgb(224, 129, 129)">
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center"><a href="#">{{ object.username }}</a></td>
-                                <td class="text-center">{{ object.net_worth }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'profile' object.username %}">
+                                        {{ object.username }}
+                                    </a>
+                                </td>
+                                <td class="text-center">&#8377; {{ object.net_worth }}</td>
                             </tr>
                         {% else %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center"><a href="#">{{ object.username }}</a></td>
-                                <td class="text-center">{{ object.net_worth }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'profile' object.username %}">
+                                        {{ object.username }}
+                                    </a>
+                                </td>
+                                <td class="text-center">&#8377; {{ object.net_worth }}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}

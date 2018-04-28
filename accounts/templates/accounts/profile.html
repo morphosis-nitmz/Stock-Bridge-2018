@@ -10,15 +10,15 @@
 <div class="row">
     <div class="col-12 mt-3">
         <div class="text-center">
-            <h1>{{ object.full_name }}</h1>
-            <p>{{ object.username }}</p>
-            <p>{{ object.email }}</p>
+            <h1 class="heading">{{ object.full_name }}</h1>
+            <p class="lead">{{ object.username }}</p>
+            <p class="lead">{{ object.email }}</p>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-12 text-center my-5">
-        <h3>Net Worth: INR {{ object.net_worth|intcomma }}</h3>
+        <h3>Net Worth: &#8377; {{ object.net_worth|intcomma }}</h3>
         {{ investment }}
     </div>
 </div>
@@ -34,14 +34,20 @@
                         <th class="text-center">S.no</th>
                         <th class="text-center">Company</th>
                         <th class="text-center">Stocks Purchased</th>
+                        <th class="text-center">Current Market Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for investment in investments %}
                         <tr>
                             <td class="text-center">{{ forloop.counter }}</td>
-                            <td class="text-center">{{ investment.company }}</td>
+                            <td class="text-center">
+                                <a href="{% url 'market:transaction' investment.company.code %}">
+                                    {{ investment.company }}
+                                </a>
+                            </td>
                             <td class="text-center">{{ investment.stocks }}</td>
+                            <td class="text-center">&#8377; {{ investment.company.cmp }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -6,7 +6,7 @@ from bank.models import BankAccount
 
 
 class CronCreateCMPRecord(CronJobBase):
-    RUN_EVERY_MINS = 1
+    RUN_EVERY_MINS = 5
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'record.create_cmp_record'    # a unique code
@@ -17,7 +17,7 @@ class CronCreateCMPRecord(CronJobBase):
 
 
 class CronLoanInterestDeduct(CronJobBase):
-    RUN_EVERY_MINS = 1
+    RUN_EVERY_MINS = 30
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'bank.deduct_interest'    # a unique code

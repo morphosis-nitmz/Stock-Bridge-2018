@@ -8,7 +8,7 @@
 
 <div class="row">
 	<div class="col-12 my-3">
-		<h1 class="text-center">History</h1>
+		<h1 class="heading">Transaction History</h1>
 	</div>
 </div>
 <div class="jumbotron" style="padding-top: 15px;padding-left: 10px ;padding-bottom: 5px;margin-bottom:10px;margin-top:8px; ">
@@ -31,9 +31,9 @@
                             <td class="text-center">{{ forloop.counter }}</td>
                             <td class="text-center">{{ object.company }}</td>
                             <td class="text-center">{{ object.mode }}</td>
-                            <td class="text-center">{{ object.price }}</td>
+                            <td class="text-center">&#8377; {{ object.price }}</td>
                             <td class="text-center">{{ object.num_stocks }}</td>
-                            <td class="text-center">{{ object.user_net_worth }}</td>
+                            <td class="text-center">&#8377; {{ object.user_net_worth }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

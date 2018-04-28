@@ -49,10 +49,16 @@ a.dropdown-item.active {
     opacity: 1;
 }
 
-.heading {
+.home-heading {
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 200px;
+    font-family: 'foughtknight';
+    src: url('../static_files/fonts/foughtknight.ttf') format("truetype"), local('foughtknight');
+}
+
+.heading {
+    text-align: center;
     font-family: 'foughtknight';
     src: url('../static_files/fonts/foughtknight.ttf') format("truetype"), local('foughtknight');
 }

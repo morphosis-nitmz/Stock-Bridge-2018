@@ -6,12 +6,12 @@
 {% block content %}
 
 <div class="row">
-    <div class="col">
-        <h1 class="text-center">Select Your Company</h1>
+    <div class="col mt-3 mb-5">
+        <h1 class="heading">Market</h1>
     </div>
 </div>
 <div class="row">
-    <div class="col-12 mx-auto">
+    <div class="col-12 mx-auto text-center mt-5">
         <form method="POST" action="{% url 'market:company_select' %}"> {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Select</button>
