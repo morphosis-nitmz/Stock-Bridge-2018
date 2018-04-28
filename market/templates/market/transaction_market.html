@@ -5,6 +5,57 @@
 <title>Transaction</title>
 {% endblock %}
 
+{% block javascript %}
+
+<script>
+$(document).ready(function(){
+    var endpoint = '{% url "market:cmp_api_data" object.code %}'
+    var defaultData = []
+    var labels = [];
+    $.ajax({
+        method: "GET",
+        url: endpoint,
+        success: function (data) {
+            labels = data.labels
+            defaultData = data.cmp_data
+            setChart()
+        },
+        error: function (error_data) {
+            console.log("error")
+            console.log(error_data)
+        }
+    })
+
+    function setChart() {
+        var ctx = document.getElementById("cmpChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Current Market Price',
+                    data: defaultData,
+                    backgroundColor: 'rgba(122, 242, 14, 0.2)',
+                    borderColor: 'rgba(10, 12, 12, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+})
+</script>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="row">
@@ -12,29 +63,19 @@
         <div class="text-center">
             <h1 class="heading">{{ object.name }}</h1>
             <p>Net Worth: &#8377; {{ object.cap|intcomma }}</p>
-            <!--{% if object.change >= 0 %}-->
-                <!--<p>{{ object.change }} <i class="fa fa-arrow-up" aria-hidden="true"></i></p>-->
-            <!--{% else %}-->
-                <!--<p>{{ object.change }} <i class="fa fa-arrow-down" aria-hidden="true"></i></p>-->
-            <!--{% endif %}-->
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-12 col-md-8 my-5 mr-auto">
-        {% if object.code == 'GOOG' %}
-            <img src="{% static 'img/GOOG.png' %}">
-        {% elif object.code == 'MCSFT' %}
-            <img src="{% static 'img/MCSFT.png' %}">
-        {% elif object.code == 'FACBK' %}
-            <img src="{% static 'img/FACBK.png' %}">
-        {% endif %}
+        <canvas id="cmpChart" width="400" height="200"></canvas>
     </div>
     <div class="col-12 col-md-4 my-5 ml-auto text-center">
         <h3>{{ object.code }}</h3>
         Total Stocks: {{ object.stocks_offered }}<br>
         Stocks Remaining: {{ object.stocks_remaining }}<br>
-        Current Price per stock: &#8377; {{ object.cmp }}
+        Current Price per stock: &#8377; {{ object.cmp }}<br>
+        Stocks Currently Owned: {{ stocks_owned }}
     </div>
 </div>
 <div class="row">

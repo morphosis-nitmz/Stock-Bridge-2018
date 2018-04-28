@@ -3,9 +3,15 @@ from django.http import HttpResponseRedirect
 from django.views.generic import View, ListView
 from django.core.urlresolvers import reverse
 from django.contrib import messages
+from django.utils import timezone
+from django.utils.timezone import localtime
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from .models import Company, Transaction
 from .forms import CompanySelectionForm, StockTransactionForm
+from record.models import CompanyCMPRecord, InvestmentRecord
 from stock_bridge.mixins import LoginRequiredMixin
 
 
@@ -21,12 +27,39 @@ class CompanySelectionView(LoginRequiredMixin, View):
         return HttpResponseRedirect(url)
 
 
+class CompanyCMPChartData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None, *args, **kwargs):
+        qs = CompanyCMPRecord.objects.filter(company__code=kwargs.get('code'))
+        if qs.count() > 10:
+            qs = qs[:10]
+        qs = reversed(qs)  # reverse timestamp sorting i.e. latest data should be in front
+        labels = []
+        cmp_data = []
+        for cmp_record in qs:
+            labels.append(localtime(cmp_record.timestamp).strftime('%H:%M'))
+            cmp_data.append(cmp_record.cmp)
+        current_cmp = Company.objects.get(code=kwargs.get('code')).cmp
+        if cmp_data[-1] != current_cmp:
+            labels.append(localtime(timezone.now()).strftime('%H:%M'))
+            cmp_data.append(current_cmp)
+        data = {
+            "labels": labels,
+            "cmp_data": cmp_data,
+        }
+        return Response(data)
+
+
 class CompanyTransactionView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         company = Company.objects.get(code=kwargs.get('code'))
+        stocks_owned = InvestmentRecord.objects.get(user=request.user, company=company).stocks
         return render(request, 'market/transaction_market.html', {
             'object': company,
+            'stocks_owned': stocks_owned,
             'form': StockTransactionForm()
         })
 

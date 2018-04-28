@@ -66,6 +66,7 @@ INSTALLED_APPS = [
 
     # 3rd party
     'django_cron',
+    'rest_framework',
 
     # custom apps
     'accounts',
