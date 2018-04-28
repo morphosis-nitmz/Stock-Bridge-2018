@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation
 from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin
-from record.models import InvestmentRecord
+from market.models import InvestmentRecord
 
 
 User = get_user_model()

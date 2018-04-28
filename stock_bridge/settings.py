@@ -71,8 +71,7 @@ INSTALLED_APPS = [
     # custom apps
     'accounts',
     'market',
-    'bank',
-    'record'
+    'bank'
 ]
 
 CRON_CLASSES = [

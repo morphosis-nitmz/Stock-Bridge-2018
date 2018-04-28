@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 from django.db import models
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
 from django.contrib.auth import get_user_model
 
 
@@ -41,6 +41,13 @@ class Company(models.Model):
         self.save()
 
 
+def pre_save_company_receiver(sender, instance, *args, **kwargs):
+    if instance.cmp <= Decimal(0.00):
+        instance.cmp = Decimal(0.01)
+
+pre_save.connect(pre_save_company_receiver, sender=Company)
+
+
 class TransactionQuerySet(models.query.QuerySet):
 
     def get_by_user(self, user):
@@ -71,12 +78,13 @@ class TransactionManager(models.Manager):
         if num_stocks <= 0:
             return None
         if mode == 'buy':
-            if num_stocks > company.stocks_remaining:
+            if num_stocks > company.stocks_remaining and num_stocks * company.cmp > user.net_worth:
                 return None
             company.user_buy_stocks(num_stocks)
             user.buy_stocks(num_stocks, price)
         elif mode == 'sell':
-            if num_stocks * company.cmp > user.net_worth:
+            investment_obj = InvestmentRecord.objects.get(user=user, company=company)
+            if num_stocks > investment_obj.stocks:
                 return None
             company.user_sell_stocks(num_stocks)
             user.sell_stocks(num_stocks, price)
@@ -112,3 +120,49 @@ def pre_save_transaction_receiver(sender, instance, *args, **kwargs):
     instance.user_net_worth = instance.user.net_worth
 
 pre_save.connect(pre_save_transaction_receiver, sender=Transaction)
+
+
+class InvestmentRecord(models.Model):
+    user = models.ForeignKey(User)
+    company = models.ForeignKey(Company)
+    stocks = models.IntegerField(default=0)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('user', 'company')
+
+    def __str__(self):
+        return self.user.username + ' - ' + self.company.code
+
+
+def post_save_user_create_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        for company in Company.objects.all():
+            obj = InvestmentRecord.objects.create(user=instance, company=company)
+
+post_save.connect(post_save_user_create_receiver, sender=User)
+
+
+def post_save_transaction_create_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        investment_obj = InvestmentRecord.objects.filter(user=instance.user, company=instance.company).first()
+        if instance.mode == 'buy':
+            investment_obj.stocks += instance.num_stocks
+        elif instance.mode == 'sell':
+            investment_obj.stocks -= instance.num_stocks
+        investment_obj.save()
+
+post_save.connect(post_save_transaction_create_receiver, sender=Transaction)
+
+
+class CompanyCMPRecord(models.Model):
+    company = models.ForeignKey(Company)
+    cmp = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return self.company.code

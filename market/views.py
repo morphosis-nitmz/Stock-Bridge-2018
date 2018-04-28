@@ -9,9 +9,8 @@ from django.utils.timezone import localtime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Company, Transaction
+from .models import Company, Transaction, CompanyCMPRecord, InvestmentRecord
 from .forms import CompanySelectionForm, StockTransactionForm
-from record.models import CompanyCMPRecord, InvestmentRecord
 from stock_bridge.mixins import LoginRequiredMixin
 
 
@@ -72,10 +71,8 @@ class CompanyTransactionView(LoginRequiredMixin, View):
             messages.success(request, 'Transaction complete!')
         else:
             messages.error(request, 'Please enter a valid quantity.')
-        return render(request, 'market/transaction_market.html', {
-            'object': company,
-            'form': StockTransactionForm()
-        })
+        url = reverse('market:transaction', kwargs={'code': company.code})
+        return HttpResponseRedirect(url)
 
 
 class UserTransactionHistoryView(LoginRequiredMixin, ListView):
