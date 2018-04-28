@@ -26,7 +26,10 @@ class BankLoanView(LoginRequiredMixin, View):
             if bank_account.get_installment():
                 messages.success(request, 'Installment paid!')
             else:
-                messages.error(request, 'Minimum installment amount has to be INR 10,000')
+                messages.error(
+                    request,
+                    'Minimum installment amount has to be INR 10,000 and you should have sufficient balance.'
+                )
         return redirect('bank:loan')
 
 

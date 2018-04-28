@@ -28,7 +28,7 @@ class BankAccount(models.Model):
         self.user.save()
 
     def get_installment(self):
-        if self.loan >= DEFAULT_LOAN_AMOUNT:
+        if self.loan >= DEFAULT_LOAN_AMOUNT and self.user.net_worth >= DEFAULT_LOAN_AMOUNT:
             self.loan -= DEFAULT_LOAN_AMOUNT
             self.save()
             self.user.net_worth -= DEFAULT_LOAN_AMOUNT
