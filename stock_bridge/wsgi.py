@@ -11,13 +11,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 from django.core.management import call_command
-from whitenoise.django import DjangoWhiteNoise
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stock_bridge.settings")
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
 
 # Cron Jobs
 call_command('runcrons')

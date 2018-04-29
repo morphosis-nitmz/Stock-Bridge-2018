@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     # 3rd party
     'django_cron',
     'rest_framework',
+    'storages',
 
     # custom apps
     'accounts',
@@ -155,12 +156,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_files")
 ]
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
+
+from stock_bridge.aws.conf import *
 
 
 # SSL/TLS settings for https security
