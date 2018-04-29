@@ -42,6 +42,14 @@ class Company(models.Model):
     def get_absolute_url(self):
         return reverse('market:transaction', kwargs={'code': self.code})
 
+    def get_cap(self):
+        cap = self.cap_type
+        if cap == 'small':
+            return 'Small Cap'
+        if cap == 'mid':
+            return 'Mid Cap'
+        return 'Large Cap'
+
     def calculate_change(self, old_price):
         self.change = ((self.cmp - old_price) / old_price) * Decimal(100.00)
         self.save()

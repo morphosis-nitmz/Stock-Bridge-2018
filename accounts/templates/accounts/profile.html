@@ -47,7 +47,18 @@
                                 </a>
                             </td>
                             <td class="text-center">{{ investment.stocks }}</td>
-                            <td class="text-center">&#8377; {{ investment.company.cmp }}</td>
+                            <td class="text-center">
+                                &#8377; {{ investment.company.cmp }}
+                                {% if investment.company.change >= 0 %}
+                                    <small style="color: green">
+                                        ({{ investment.company.change }}%) <i class="fa fa-arrow-up"></i>
+                                    </small><br>
+                                {% elif investment.company.change < 0 %}
+                                    <small style="color: red">
+                                        ({{ investment.company.change }}%) <i class="fa fa-arrow-down"></i>
+                                    </small><br>
+                                {% endif %}
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

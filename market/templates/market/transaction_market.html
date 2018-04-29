@@ -62,7 +62,11 @@ $(document).ready(function(){
     <div class="col mx-auto my-3">
         <div class="text-center">
             <h1 class="heading">{{ object.name }}</h1>
-            <p>Net Worth: &#8377; {{ object.cap|intcomma }}</p>
+            <p>
+                <strong>Industry:</strong> {{ object.industry }}<br>
+                <strong>Cap Type:</strong> {{ object.get_cap }}<br>
+                <strong>Cap Size:</strong> &#8377; {{ object.cap|intcomma }}
+            </p>
         </div>
     </div>
 </div>
@@ -74,12 +78,18 @@ $(document).ready(function(){
         <h3>{{ object.code }}</h3>
         Total Stocks: {{ object.stocks_offered }}<br>
         Stocks Remaining: {{ object.stocks_remaining }}<br>
-        Current Price per stock: &#8377; {{ object.cmp }}<br>
+        Current Price per stock: &#8377; {{ object.cmp }}
+        {% if object.change >= 0 %}
+            <small style="color: green">({{ object.change }}%) <i class="fa fa-arrow-up"></i></small><br>
+        {% elif object.change < 0 %}
+            <small style="color: red">({{ object.change }}%) <i class="fa fa-arrow-down"></i></small><br>
+        {% endif %}
         Stocks Currently Owned: {{ stocks_owned }}
     </div>
 </div>
 <div class="row">
     <div class="col-6 text-center mx-auto mt-5">
+        <p style="font-size: 25px;"><b>Balance Available:</b> &#8377; {{ request.user.cash }}</p><br>
         <form method="POST" action="{% url 'market:transaction' object.code %}"> {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-success">Transact</button>
