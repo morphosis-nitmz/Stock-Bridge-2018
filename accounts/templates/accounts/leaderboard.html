@@ -37,11 +37,7 @@
                         {% else %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center">
-                                    <a href="{% url 'profile' object.0 %}">
-                                        {{ object.0 }}
-                                    </a>
-                                </td>
+                                <td class="text-center">{{ object.0 }}</td>
                                 <td class="text-center">&#8377; {{ object.1 }}</td>
                             </tr>
                         {% endif %}

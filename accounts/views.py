@@ -57,6 +57,11 @@ def deduct_interest(request):
 class ProfileView(LoginRequiredMixin, DetailView):
     template_name = 'accounts/profile.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.username != kwargs.get('username'):
+            return redirect('/')
+        return super(ProfileView, self).dispatch(request, *args, **kwargs)
+
     def get_object(self, *args, **kwargs):
         username = self.kwargs.get('username')
         instance = User.objects.filter(username=username).first()
