@@ -2,6 +2,7 @@ import os
 import dj_database_url
 from decimal import Decimal
 from decouple import config
+from datetime import datetime
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,7 +39,12 @@ ADMINS = MANAGERS
 
 # Bank Data
 DEFAULT_LOAN_AMOUNT = Decimal(10000.00)
+PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
+
+# Global settings
+START_TIME = datetime(2018, 4, 30, 2, 0, 0)
+STOP_TIME = datetime(2018, 4, 30, 19, 0, 0)
 
 
 # Application definition

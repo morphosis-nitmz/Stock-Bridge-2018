@@ -1,3 +1,4 @@
+{% load humanize %}
 {% url 'home' as home_url %}
 {% url 'login' as login_url %}
 {% url 'register' as register_url %}
@@ -35,6 +36,9 @@
 			</ul>
 			<ul class="navbar-nav ml-auto">
 				{% if request.user.is_authenticated %}
+					<li class="nav-item mr-4">
+						<a class="nav-link disabled" style="color: white" href="#">Cash: &#8377; {{ request.user.cash|intcomma }}</a>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Account
