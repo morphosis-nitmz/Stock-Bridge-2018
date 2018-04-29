@@ -1,9 +1,29 @@
+from datetime import datetime, timedelta
+
 from django.conf import settings
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.utils.http import is_safe_url
 
 from .decorators import login_required_message_and_redirect
+from market.models import Company, CompanyCMPRecord
+
+
+LAST_ACTIVITY_TIME = getattr(settings, 'LAST_ACTIVITY_TIME')
+
+
+class CreateCMPRecordMixin(object):
+
+    def dispatch(self, request, *args, **kwargs):
+        global LAST_ACTIVITY_TIME
+        comparing_time = datetime.now() - timedelta(minutes=1)
+        print(comparing_time)
+        if comparing_time >= LAST_ACTIVITY_TIME:
+            LAST_ACTIVITY_TIME = datetime.now()
+            print(LAST_ACTIVITY_TIME)
+            for company in Company.objects.all():
+                CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
+        return super(CreateCMPRecordMixin, self).dispatch(request, *args, **kwargs)
 
 
 class LoginRequiredMixin(object):

@@ -11,14 +11,14 @@ from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation
-from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin
+from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin, CreateCMPRecordMixin
 from market.models import InvestmentRecord
 
 
 User = get_user_model()
 
 
-class LoanView(LoginRequiredMixin, View):
+class LoanView(LoginRequiredMixin, CreateCMPRecordMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'accounts/loan.html', {
@@ -56,7 +56,7 @@ def deduct_interest(request):
     return HttpResponse('Interest Deducted', status=200)
 
 
-class ProfileView(LoginRequiredMixin, DetailView):
+class ProfileView(LoginRequiredMixin, CreateCMPRecordMixin, DetailView):
     template_name = 'accounts/profile.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -80,7 +80,7 @@ class ProfileView(LoginRequiredMixin, DetailView):
         return context
 
 
-class LeaderBoardView(View):
+class LeaderBoardView(CreateCMPRecordMixin, View):
     template_name = 'accounts/leaderboard.html'
 
     def get(self, request, *args, **kwargs):

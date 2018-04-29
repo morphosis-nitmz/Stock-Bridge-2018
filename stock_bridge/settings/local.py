@@ -43,6 +43,7 @@ RATE_OF_INTEREST = Decimal(0.15)  # 15%
 # Global settings
 START_TIME = datetime(2018, 4, 30, 2, 0, 0)
 STOP_TIME = datetime(2018, 4, 30, 19, 0, 0)
+LAST_ACTIVITY_TIME = START_TIME
 
 
 # Application definition
@@ -57,7 +58,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # 3rd party
-    'django_cron',
     'rest_framework',
     'storages',
 
@@ -66,10 +66,6 @@ INSTALLED_APPS = [
     'market'
 ]
 
-# CRON_CLASSES = [
-#     'stock_bridge.cron.CronCreateCMPRecord',
-#     'stock_bridge.cron.CronLoanInterestDeduct'
-# ]
 
 # Replace the built-in values
 AUTH_USER_MODEL = 'accounts.User'

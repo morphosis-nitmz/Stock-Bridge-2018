@@ -5,13 +5,13 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import LogoutView
 from django.views.generic import RedirectView
 
-from .views import home
+from .views import HomeView
 from accounts.views import RegisterView, LoginView, LeaderBoardView, ProfileView
 from market.views import UserTransactionHistoryView
 
 
 urlpatterns = [
-    url(r'^$', home, name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),

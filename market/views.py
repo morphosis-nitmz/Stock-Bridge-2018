@@ -14,7 +14,7 @@ from rest_framework.response import Response
 
 from .models import Company, Transaction, CompanyCMPRecord, InvestmentRecord
 from .forms import StockTransactionForm
-from stock_bridge.mixins import LoginRequiredMixin
+from stock_bridge.mixins import LoginRequiredMixin, CreateCMPRecordMixin
 
 
 START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
@@ -29,7 +29,7 @@ class CompanyCMPCreateView(View):
         return HttpResponse('success')
 
 
-class CompanySelectionView(LoginRequiredMixin, View):
+class CompanySelectionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'market/select_company.html', {
@@ -62,7 +62,7 @@ class CompanyCMPChartData(APIView):
         return Response(data)
 
 
-class CompanyTransactionView(LoginRequiredMixin, View):
+class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
 
     def get(self, request, *args, **kwargs):
         company = Company.objects.get(code=kwargs.get('code'))
@@ -130,7 +130,7 @@ class CompanyTransactionView(LoginRequiredMixin, View):
         return HttpResponseRedirect(url)
 
 
-class UserTransactionHistoryView(LoginRequiredMixin, ListView):
+class UserTransactionHistoryView(LoginRequiredMixin, CreateCMPRecordMixin, ListView):
     template_name = 'market/user_transaction_history.html'
 
     def get_queryset(self, *args, **kwargs):
