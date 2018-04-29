@@ -10,11 +10,11 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
-from django.core.management import call_command
+# from django.core.management import call_command
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stock_bridge.settings")
 
 # Cron Jobs
-call_command('runcrons')
+# call_command('runcrons')
 
 application = get_wsgi_application()

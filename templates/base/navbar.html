@@ -4,7 +4,7 @@
 {% url 'logout' as logout_url %}
 {% url 'transaction_history' as transaction_history_url %}
 {% url 'leaderboard' as leaderboard_url %}
-{% url 'bank:loan' as bank_loan_url %}
+{% url 'account:loan' as loan_url %}
 {% url 'profile' request.user.username as profile_url %}
 {% url 'market:company_select' as market_url %}
 
@@ -26,8 +26,8 @@
 				<li class="nav-item {% if request.path == market_url %}active{% endif %}">
 					<a class="nav-link" href="{{ market_url }}">Market</a>
 				</li>
-				<li class="nav-item {% if request.path == bank_loan_url %}active{% endif %}">
-					<a class="nav-link" href="{{ bank_loan_url }}">Bank</a>
+				<li class="nav-item {% if request.path == loan_url %}active{% endif %}">
+					<a class="nav-link" href="{{ loan_url }}">Bank</a>
 				</li>
 				<li class="nav-item {% if request.path == leaderboard_url %}active{% endif %}">
 					<a class="nav-link" href="{{ leaderboard_url }}">Leaderboard</a>

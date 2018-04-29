@@ -1,7 +1,10 @@
+from django.contrib.auth import get_user_model
 from django_cron import CronJobBase, Schedule
 
 from market.models import CompanyCMPRecord, Company
-from bank.models import BankAccount
+
+
+User = get_user_model()
 
 
 class CronCreateCMPRecord(CronJobBase):
@@ -24,5 +27,5 @@ class CronLoanInterestDeduct(CronJobBase):
     code = 'market.deduct_interest'    # a unique code
 
     def do(self):
-        for account in BankAccount.objects.all():
-            account.deduct_interest()
+        for user in User.objects.all():
+            user.deduct_interest()

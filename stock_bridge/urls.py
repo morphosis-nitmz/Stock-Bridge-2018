@@ -22,7 +22,6 @@ urlpatterns = [
     url(r'^leaderboard/$', LeaderBoardView.as_view(), name='leaderboard'),
     url(r'^stocks/', include('market.urls', namespace='market')),
     url(r'^history/$', UserTransactionHistoryView.as_view(), name='transaction_history'),
-    url(r'^bank/', include('bank.urls', namespace='bank')),
     url(r'^admin/', admin.site.urls),
 ]
 

@@ -67,11 +67,46 @@ class CompanyTransactionView(LoginRequiredMixin, View):
         company = Company.objects.get(code=kwargs.get('code'))
         mode = request.POST.get('mode')
         quantity = int(request.POST.get('quantity'))
-        obj = Transaction.objects.create(request.user, company, quantity, company.cmp, mode)
-        if obj is not None:
-            messages.success(request, 'Transaction complete!')
+        price = company.cmp
+        user = request.user
+        if quantity > 0:
+            if mode == 'buy':
+                if user.buy_stocks(quantity, price):
+                    if company.user_buy_stocks(quantity):
+                        obj = Transaction.objects.create(
+                            user=user,
+                            company=company,
+                            num_stocks=quantity,
+                            price=price,
+                            mode=mode,
+                            user_net_worth=user.net_worth
+                        )
+                        company.calculate_change(price)
+                        messages.success(request, 'Transaction Complete!')
+                    else:
+                        messages.error(request, 'The company does not have that many stocks left!')
+                else:
+                    messages.error(request, 'You cannot make a purchase of value more than your net worth!')
+            elif mode == 'sell':
+                investment_obj = InvestmentRecord.objects.get(user=user, company=company)
+                if quantity <= investment_obj.stocks and company.user_sell_stocks(quantity):
+                    user.sell_stocks(quantity, price)
+                    obj = Transaction.objects.create(
+                        user=user,
+                        company=company,
+                        num_stocks=quantity,
+                        price=price,
+                        mode=mode,
+                        user_net_worth=user.net_worth
+                    )
+                    company.calculate_change(price)
+                    messages.success(request, 'Transaction Complete!')
+                else:
+                    messages.error(request, 'Please enter a valid quantity!')
+            else:
+                messages.error(request, 'Please enter a valid mode!')
         else:
-            messages.error(request, 'Please enter a valid quantity.')
+            messages.error(request, 'The quantity cannot be negative!')
         url = reverse('market:transaction', kwargs={'code': company.code})
         return HttpResponseRedirect(url)
 

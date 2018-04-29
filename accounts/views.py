@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.views.generic import ListView, DetailView, FormView, CreateView, View
@@ -14,6 +14,42 @@ from market.models import InvestmentRecord
 
 
 User = get_user_model()
+
+
+class LoanView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, 'accounts/loan.html', {
+            'user': request.user
+        })
+
+    def post(self, request, *args, **kwargs):
+        mode = request.POST.get('mode')
+        user = request.user
+        if mode == 'issue':
+            user.issue_loan()
+            messages.success(request, 'Loan has been issued.')
+        elif mode == 'pay':
+            if user.pay_installment():
+                messages.success(request, 'Installment paid!')
+            else:
+                messages.error(
+                    request,
+                    'Minimum installment amount has to be INR 10,000 and you should have sufficient balance.'
+                )
+        return redirect('account:loan')
+
+
+def cancel_loan(request):
+    user = request.user
+    user.cancel_loan()
+    return HttpResponse('Loan Deducted', status=200)
+
+
+def deduct_interest(request):
+    user = request.user
+    user.deduct_interest()
+    return HttpResponse('Interest Deducted', status=200)
 
 
 class ProfileView(LoginRequiredMixin, DetailView):

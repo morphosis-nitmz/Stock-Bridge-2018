@@ -1,5 +1,6 @@
 from datetime import timedelta
 from decimal import Decimal
+import numpy as np
 
 from django.conf import settings
 from django.db import models
@@ -16,11 +17,12 @@ from stock_bridge.utils import unique_key_generator
 
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
 DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
+RATE_OF_INTEREST = getattr(settings, 'RATE_OF_INTEREST', Decimal(0.15))
 
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, username, email, password=None, full_name=None, is_active=True, is_staff=False, is_admin=False):
+    def create_user(self, username, email, password=None, full_name=None, is_active=True, is_staff=False, is_superuser=False):
         if not username:
             raise ValueError('Users must have a unique username.')
         if not email:
@@ -36,7 +38,7 @@ class UserManager(BaseUserManager):
         user_obj.set_password(password)
         user_obj.is_active = is_active
         user_obj.staff = is_staff
-        user_obj.admin = is_admin
+        user_obj.is_superuser = is_superuser
         user_obj.net_worth = 0.00
         user_obj.save(using=self._db)
         return user_obj
@@ -58,7 +60,7 @@ class UserManager(BaseUserManager):
             password=password,
             full_name=full_name,
             is_staff=True,
-            is_admin=True
+            is_superuser=True
         )
         return user
 
@@ -68,10 +70,11 @@ class User(AbstractBaseUser):
     email = models.EmailField(unique=True, max_length=255)
     full_name = models.CharField(max_length=255, blank=True, null=True)
     net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
+    loan = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
-    admin = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -81,7 +84,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     class Meta:
-        ordering = ['-net_worth', 'timestamp']
+        ordering = ['-net_worth', 'coeff_of_variation']
 
     def __str__(self):
         return self.username
@@ -106,16 +109,44 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.staff
 
-    @property
-    def is_admin(self):
-        return self.admin
-
     def buy_stocks(self, quantity, price):
-        self.net_worth += Decimal(quantity) * price
-        self.save()
+        purchase_amount = Decimal(quantity) * price
+        if self.net_worth >= purchase_amount:
+            self.net_worth += Decimal(quantity) * price
+            self.save()
+            return True
+        return False
 
     def sell_stocks(self, quantity, price):
         self.net_worth -= Decimal(quantity) * price
+        self.save()
+
+    def issue_loan(self):
+        self.loan += DEFAULT_LOAN_AMOUNT
+        self.net_worth += DEFAULT_LOAN_AMOUNT
+        self.save()
+
+    def pay_installment(self):
+        if self.loan >= DEFAULT_LOAN_AMOUNT and self.net_worth >= DEFAULT_LOAN_AMOUNT:
+            self.loan -= DEFAULT_LOAN_AMOUNT
+            self.net_worth -= DEFAULT_LOAN_AMOUNT
+            self.save()
+            return True
+        return False
+
+    def cancel_loan(self):
+        self.net_worth -= self.loan
+        self.loan = Decimal(0.00)
+        self.save()
+
+    def deduct_interest(self):
+        amount = (self.loan * (Decimal(1.0) + RATE_OF_INTEREST)) / Decimal(12.0)  # After 1 month
+        compound_interest = abs(amount - self.loan)
+        self.net_worth -= compound_interest
+        self.save()
+
+    def update_cv(self, net_worth_list):
+        self.coeff_of_variation = Decimal(np.std(net_worth_list) / np.mean(net_worth_list))
         self.save()
 
 
