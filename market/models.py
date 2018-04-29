@@ -33,6 +33,9 @@ class Company(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['cap_type', 'code']
+
     def __str__(self):
         return self.name
 
@@ -46,7 +49,7 @@ class Company(models.Model):
     def user_buy_stocks(self, quantity):
         if quantity <= self.stocks_remaining:
             self.stocks_remaining -= quantity
-            self.cmp = self.cmp / Decimal(2.0) + (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
+            self.cmp = self.cmp + (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
             self.save()
             return True
         return False
@@ -54,7 +57,7 @@ class Company(models.Model):
     def user_sell_stocks(self, quantity):
         if quantity <= self.stocks_offered:
             self.stocks_remaining += quantity
-            self.cmp = self.cmp / Decimal(2.0) - (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
+            self.cmp = self.cmp - (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
             self.save()
             return True
         return False
@@ -125,7 +128,8 @@ class Transaction(models.Model):
 
 
 def pre_save_transaction_receiver(sender, instance, *args, **kwargs):
-    instance.user_net_worth = instance.user.net_worth
+    amount = InvestmentRecord.objects.calculate_net_worth(instance.user)
+    instance.user_net_worth = amount
 
 pre_save.connect(pre_save_transaction_receiver, sender=Transaction)
 
@@ -151,11 +155,41 @@ def post_save_transaction_create_receiver(sender, instance, created, *args, **kw
 post_save.connect(post_save_transaction_create_receiver, sender=Transaction)
 
 
+class InvestmentRecordQuerySet(models.query.QuerySet):
+
+    def get_by_user(self, user):
+        return self.filter(user=user)
+
+    def get_by_company(self, company):
+        return self.filter(company=company)
+
+
+class InvestmentRecordManager(models.Manager):
+
+    def get_queryset(self):
+        return InvestmentRecordQuerySet(self.model, using=self._db)
+
+    def get_by_user(self, user):
+        return self.get_queryset().get_by_user(user=user)
+
+    def get_by_company(self, company):
+        return self.get_queryset().get_by_company(company=company)
+
+    def calculate_net_worth(self, user):
+        qs = self.get_by_user(user)
+        amount = Decimal(0.00)
+        for inv in qs:
+            amount += Decimal(inv.stocks) * inv.company.cmp
+        return amount + user.cash
+
+
 class InvestmentRecord(models.Model):
     user = models.ForeignKey(User)
     company = models.ForeignKey(Company)
     stocks = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True)
+
+    objects = InvestmentRecordManager()
 
     class Meta:
         unique_together = ('user', 'company')

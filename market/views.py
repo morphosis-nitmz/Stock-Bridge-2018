@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import View, ListView
 from django.core.urlresolvers import reverse
 from django.contrib import messages
@@ -12,6 +12,14 @@ from rest_framework.response import Response
 from .models import Company, Transaction, CompanyCMPRecord, InvestmentRecord
 from .forms import StockTransactionForm
 from stock_bridge.mixins import LoginRequiredMixin
+
+
+class CompanyCMPCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        for company in Company.objects.all():
+            obj = CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
+        return HttpResponse('success')
 
 
 class CompanySelectionView(LoginRequiredMixin, View):
@@ -75,7 +83,7 @@ class CompanyTransactionView(LoginRequiredMixin, View):
                             num_stocks=quantity,
                             price=price,
                             mode=mode,
-                            user_net_worth=user.net_worth
+                            user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
                         )
                         company.calculate_change(price)
                         messages.success(request, 'Transaction Complete!')
@@ -93,7 +101,7 @@ class CompanyTransactionView(LoginRequiredMixin, View):
                         num_stocks=quantity,
                         price=price,
                         mode=mode,
-                        user_net_worth=user.net_worth
+                        user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
                     )
                     company.calculate_change(price)
                     messages.success(request, 'Transaction Complete!')

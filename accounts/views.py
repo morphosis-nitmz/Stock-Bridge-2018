@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse
 from django.contrib import messages
@@ -66,14 +68,22 @@ class ProfileView(LoginRequiredMixin, DetailView):
         context = super(ProfileView, self).get_context_data(*args, **kwargs)
         qs = InvestmentRecord.objects.filter(user=self.request.user)
         if qs.count() >= 1:
+            context['net_worth'] = InvestmentRecord.objects.calculate_net_worth(self.request.user)
             context['investments'] = qs
-        print(qs)
         return context
 
 
-class LeaderBoardView(ListView):
+class LeaderBoardView(View):
     template_name = 'accounts/leaderboard.html'
-    queryset = User.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        data = []
+        user_qs = User.objects.all()
+        for user in user_qs:
+            net_worth = InvestmentRecord.objects.calculate_net_worth(user)
+            data.append((user.username, net_worth, user.coeff_of_variation))
+        data = sorted(data, key=lambda d: (-d[1], d[2]))
+        return render(request, 'accounts/leaderboard.html', {'data': data})
 
 
 class AccountEmailActivateView(FormMixin, View):

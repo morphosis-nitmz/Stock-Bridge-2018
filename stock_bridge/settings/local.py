@@ -61,10 +61,10 @@ INSTALLED_APPS = [
     'market'
 ]
 
-CRON_CLASSES = [
-    'stock_bridge.cron.CronCreateCMPRecord',
-    'stock_bridge.cron.CronLoanInterestDeduct'
-]
+# CRON_CLASSES = [
+#     'stock_bridge.cron.CronCreateCMPRecord',
+#     'stock_bridge.cron.CronLoanInterestDeduct'
+# ]
 
 # Replace the built-in values
 AUTH_USER_MODEL = 'accounts.User'
@@ -162,7 +162,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
 
-from stock_bridge.aws.conf import *
+# from stock_bridge.aws.conf import *
 
 
 # removing SSL/TLS settings for local environment

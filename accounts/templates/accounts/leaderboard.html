@@ -23,26 +23,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for object in object_list %}
-                        {% if object.username == request.user.username %}
+                    {% for object in data %}
+                        {% if object.0 == request.user.username %}
                             <tr style="background-color:rgb(224, 129, 129)">
                                 <td class="text-center">{{ forloop.counter }}</td>
                                 <td class="text-center">
-                                    <a href="{% url 'profile' object.username %}">
-                                        {{ object.username }}
+                                    <a href="{% url 'profile' object.0 %}">
+                                        {{ object.0 }}
                                     </a>
                                 </td>
-                                <td class="text-center">&#8377; {{ object.net_worth }}</td>
+                                <td class="text-center">&#8377; {{ object.1 }}</td>
                             </tr>
                         {% else %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
                                 <td class="text-center">
-                                    <a href="{% url 'profile' object.username %}">
-                                        {{ object.username }}
+                                    <a href="{% url 'profile' object.0 %}">
+                                        {{ object.0 }}
                                     </a>
                                 </td>
-                                <td class="text-center">&#8377; {{ object.net_worth }}</td>
+                                <td class="text-center">&#8377; {{ object.1 }}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}

@@ -39,7 +39,7 @@ class UserManager(BaseUserManager):
         user_obj.is_active = is_active
         user_obj.staff = is_staff
         user_obj.is_superuser = is_superuser
-        user_obj.net_worth = 0.00
+        user_obj.cash = 0.00
         user_obj.save(using=self._db)
         return user_obj
 
@@ -69,7 +69,7 @@ class User(AbstractBaseUser):
     username = models.CharField(unique=True, max_length=120)
     email = models.EmailField(unique=True, max_length=255)
     full_name = models.CharField(max_length=255, blank=True, null=True)
-    net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
+    cash = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     loan = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     is_active = models.BooleanField(default=True)
@@ -84,7 +84,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     class Meta:
-        ordering = ['-net_worth', 'coeff_of_variation']
+        ordering = ['-cash', 'coeff_of_variation']
 
     def __str__(self):
         return self.username
@@ -111,38 +111,38 @@ class User(AbstractBaseUser):
 
     def buy_stocks(self, quantity, price):
         purchase_amount = Decimal(quantity) * price
-        if self.net_worth >= purchase_amount:
-            self.net_worth += Decimal(quantity) * price
+        if self.cash >= purchase_amount:
+            self.cash += Decimal(quantity) * price
             self.save()
             return True
         return False
 
     def sell_stocks(self, quantity, price):
-        self.net_worth -= Decimal(quantity) * price
+        self.cash -= Decimal(quantity) * price
         self.save()
 
     def issue_loan(self):
         self.loan += DEFAULT_LOAN_AMOUNT
-        self.net_worth += DEFAULT_LOAN_AMOUNT
+        self.cash += DEFAULT_LOAN_AMOUNT
         self.save()
 
     def pay_installment(self):
-        if self.loan >= DEFAULT_LOAN_AMOUNT and self.net_worth >= DEFAULT_LOAN_AMOUNT:
+        if self.loan >= DEFAULT_LOAN_AMOUNT and self.cash >= DEFAULT_LOAN_AMOUNT:
             self.loan -= DEFAULT_LOAN_AMOUNT
-            self.net_worth -= DEFAULT_LOAN_AMOUNT
+            self.cash -= DEFAULT_LOAN_AMOUNT
             self.save()
             return True
         return False
 
     def cancel_loan(self):
-        self.net_worth -= self.loan
+        self.cash -= self.loan
         self.loan = Decimal(0.00)
         self.save()
 
     def deduct_interest(self):
         amount = (self.loan * (Decimal(1.0) + RATE_OF_INTEREST)) / Decimal(12.0)  # After 1 month
         compound_interest = abs(amount - self.loan)
-        self.net_worth -= compound_interest
+        self.cash -= compound_interest
         self.save()
 
     def update_cv(self, net_worth_list):

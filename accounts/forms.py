@@ -56,7 +56,7 @@ class UserAdminChangeForm(forms.ModelForm):
         model = User
         fields = (
             'username', 'email', 'full_name', 'password', 'is_active',
-            'net_worth', 'loan', 'coeff_of_variation', 'is_superuser'
+            'cash', 'loan', 'coeff_of_variation', 'is_superuser'
         )
 
     def clean_password(self):
