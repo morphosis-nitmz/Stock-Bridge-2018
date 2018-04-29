@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # 3rd party
-    # 'django_cron',
+    'django_cron',
     'rest_framework',
 
     # custom apps
@@ -61,10 +61,10 @@ INSTALLED_APPS = [
     'market'
 ]
 
-# CRON_CLASSES = [
-#     'stock_bridge.cron.CronCreateCMPRecord',
-#     'stock_bridge.cron.CronLoanInterestDeduct'
-# ]
+CRON_CLASSES = [
+    'stock_bridge.cron.CronCreateCMPRecord',
+    'stock_bridge.cron.CronLoanInterestDeduct'
+]
 
 # Replace the built-in values
 AUTH_USER_MODEL = 'accounts.User'
