@@ -1,12 +1,6 @@
 from django import forms
 
-from .models import Company, TRANSACTION_MODES
-
-
-class CompanySelectionForm(forms.Form):
-    company_list = forms.ChoiceField(choices=[
-        (company.code, company.name) for company in Company.objects.all()
-    ])
+from .models import TRANSACTION_MODES
 
 
 class StockTransactionForm(forms.Form):

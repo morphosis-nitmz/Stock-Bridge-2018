@@ -3,6 +3,7 @@ from decimal import Decimal
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 
 User = get_user_model()
@@ -34,6 +35,9 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('market:transaction', kwargs={'code': self.code})
 
     def calculate_change(self, old_price):
         self.change = ((self.cmp - old_price) / old_price) * Decimal(100.00)

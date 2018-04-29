@@ -10,20 +10,16 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .models import Company, Transaction, CompanyCMPRecord, InvestmentRecord
-from .forms import CompanySelectionForm, StockTransactionForm
+from .forms import StockTransactionForm
 from stock_bridge.mixins import LoginRequiredMixin
 
 
 class CompanySelectionView(LoginRequiredMixin, View):
-    form_class = CompanySelectionForm
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'market/select_company.html', {'form': self.form_class})
-
-    def post(self, request, *args, **kwargs):
-        code = request.POST.get('company_list')
-        url = reverse('market:transaction', kwargs={'code': code})
-        return HttpResponseRedirect(url)
+        return render(request, 'market/select_company.html', {
+            'object_list': Company.objects.all()
+        })
 
 
 class CompanyCMPChartData(APIView):

@@ -12,10 +12,16 @@
 </div>
 <div class="row">
     <div class="col-12 mx-auto text-center mt-5">
-        <form method="POST" action="{% url 'market:company_select' %}"> {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Select</button>
-        </form>
+        <div class="dropdown show">
+            <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Company
+            </button>
+            <div class="dropdown-menu">
+                {% for object in object_list %}
+                    <a class="dropdown-item" href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </div>
 
