@@ -1,4 +1,3 @@
-import numpy as np
 from decimal import Decimal
 
 from django.db import models
