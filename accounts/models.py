@@ -18,6 +18,7 @@ from stock_bridge.utils import unique_key_generator
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
 DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
 RATE_OF_INTEREST = getattr(settings, 'RATE_OF_INTEREST', Decimal(0.15))
+PRINCIPAL_INTEREST = getattr(settings, 'PRINCIPAL_INTEREST', Decimal(500.00))
 
 
 class UserManager(BaseUserManager):
@@ -71,6 +72,8 @@ class User(AbstractBaseUser):
     full_name = models.CharField(max_length=255, blank=True, null=True)
     cash = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     loan = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
+    loan_count = models.IntegerField(default=1)
+    loan_count_absolute = models.IntegerField(default=1)
     coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
@@ -122,12 +125,18 @@ class User(AbstractBaseUser):
         self.save()
 
     def issue_loan(self):
-        self.loan += DEFAULT_LOAN_AMOUNT
-        self.cash += DEFAULT_LOAN_AMOUNT
-        self.save()
+        if self.loan_count_absolute < 5:
+            self.loan_count += 1
+            self.loan_count_absolute += 1
+            self.loan += DEFAULT_LOAN_AMOUNT
+            self.cash += DEFAULT_LOAN_AMOUNT
+            self.save()
+            return True
+        return False
 
     def pay_installment(self):
-        if self.loan >= DEFAULT_LOAN_AMOUNT and self.cash >= DEFAULT_LOAN_AMOUNT:
+        if self.loan >= DEFAULT_LOAN_AMOUNT and self.cash >= DEFAULT_LOAN_AMOUNT and self.loan_count > 0:
+            self.loan_count -= 1
             self.loan -= DEFAULT_LOAN_AMOUNT
             self.cash -= DEFAULT_LOAN_AMOUNT
             self.save()
@@ -135,7 +144,10 @@ class User(AbstractBaseUser):
         return False
 
     def cancel_loan(self):
-        self.cash -= self.loan
+        interest = Decimal((self.loan_count * (self.loan_count + 1)) / 2) * PRINCIPAL_INTEREST
+        self.loan_count = 0
+        self.loan_count_absolute = 0
+        self.cash = self.cash - self.loan - interest
         self.loan = Decimal(0.00)
         self.save()
 

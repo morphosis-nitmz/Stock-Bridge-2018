@@ -29,8 +29,10 @@ class LoanView(LoginRequiredMixin, View):
         mode = request.POST.get('mode')
         user = request.user
         if mode == 'issue':
-            user.issue_loan()
-            messages.success(request, 'Loan has been issued.')
+            if user.issue_loan():
+                messages.success(request, 'Loan has been issued.')
+            else:
+                messages.error(request, 'You can issue loan atmost 5 times a day!')
         elif mode == 'pay':
             if user.pay_installment():
                 messages.success(request, 'Installment paid!')
@@ -43,14 +45,14 @@ class LoanView(LoginRequiredMixin, View):
 
 
 def cancel_loan(request):
-    user = request.user
-    user.cancel_loan()
+    for user in User.objects.all():
+        user.cancel_loan()
     return HttpResponse('Loan Deducted', status=200)
 
 
 def deduct_interest(request):
-    user = request.user
-    user.deduct_interest()
+    for user in User.objects.all():
+        user.cancel_loan()
     return HttpResponse('Interest Deducted', status=200)
 
 

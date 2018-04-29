@@ -37,6 +37,7 @@ ADMINS = MANAGERS
 
 # Bank Data
 DEFAULT_LOAN_AMOUNT = Decimal(10000.00)
+PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
 
 # Global settings
