@@ -18,7 +18,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com', '.morphosis.org.in']
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')

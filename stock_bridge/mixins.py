@@ -16,7 +16,7 @@ class CreateCMPRecordMixin(object):
 
     def dispatch(self, request, *args, **kwargs):
         global LAST_ACTIVITY_TIME
-        comparing_time = datetime.now() - timedelta(minutes=1)
+        comparing_time = datetime.now() - timedelta(minutes=5)
         print(comparing_time)
         if comparing_time >= LAST_ACTIVITY_TIME:
             LAST_ACTIVITY_TIME = datetime.now()
