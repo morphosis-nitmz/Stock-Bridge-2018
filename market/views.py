@@ -44,8 +44,8 @@ class CompanyCMPChartData(APIView):
 
     def get(self, request, format=None, *args, **kwargs):
         qs = CompanyCMPRecord.objects.filter(company__code=kwargs.get('code'))
-        if qs.count() > 100:
-            qs = qs[:100]
+        if qs.count() > 50:
+            qs = qs[:50]
         qs = reversed(qs)  # reverse timestamp sorting i.e. latest data should be in front
         labels = []
         cmp_data = []
