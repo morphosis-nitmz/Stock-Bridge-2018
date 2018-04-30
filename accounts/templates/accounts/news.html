@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>News</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12 text-center my-3">
+        <h1 class="heading">News</h1>
+    </div>
+</div>
+{% if object_list %}
+<div class="row">
+    {% for object in object_list %}
+        <div class="col-12">
+            <div class="alert alert-dark" role="alert">
+              {{ object.content|linebreaks }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="row">
+    <div class="col-12 text-center mt-5 pt-5">
+        <h3 class="lead">No news available</h3>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

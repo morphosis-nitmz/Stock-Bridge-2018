@@ -25,7 +25,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-BASE_URL = 'stock-bridge.herokuapp.com'
+BASE_URL = 'stock-bridge.morphosis.org.in'
 
 DEFAULT_ACTIVATION_DAYS = 7
 

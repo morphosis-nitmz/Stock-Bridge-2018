@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .forms import UserAdminCreationForm, UserAdminChangeForm
-from .models import EmailActivation
+from .models import EmailActivation, News
 
 
 User = get_user_model()
@@ -55,3 +55,5 @@ class EmailActivationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(EmailActivation, EmailActivationAdmin)
+
+admin.site.register(News)

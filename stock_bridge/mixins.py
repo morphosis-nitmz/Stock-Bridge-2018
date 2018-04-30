@@ -7,6 +7,7 @@ from django.utils.http import is_safe_url
 
 from .decorators import login_required_message_and_redirect
 from market.models import Company, CompanyCMPRecord
+from accounts.models import News
 
 
 LAST_ACTIVITY_TIME = getattr(settings, 'LAST_ACTIVITY_TIME')
@@ -23,7 +24,16 @@ class CreateCMPRecordMixin(object):
             print(LAST_ACTIVITY_TIME)
             for company in Company.objects.all():
                 CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
+        request.session['news'] = News.objects.all().count()
         return super(CreateCMPRecordMixin, self).dispatch(request, *args, **kwargs)
+
+
+class AdminRequiredMixin(object):
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated() and request.user.is_admin:
+            return super(AdminRequiredMixin, self).dispatch(request, *args, **kwargs)
+        return redirect(getattr(settings, 'LOGIN_URL_REDIRECT', '/'))
 
 
 class LoginRequiredMixin(object):

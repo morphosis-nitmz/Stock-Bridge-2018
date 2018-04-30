@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse
 from django.contrib import messages
@@ -10,12 +8,21 @@ from django.utils.safestring import mark_safe
 from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
-from .models import EmailActivation
-from stock_bridge.mixins import AnonymousRequiredMixin, RequestFormAttachMixin, NextUrlMixin, LoginRequiredMixin, CreateCMPRecordMixin
+from .models import EmailActivation, News
+from stock_bridge.mixins import (AnonymousRequiredMixin,
+                                 RequestFormAttachMixin,
+                                 NextUrlMixin,
+                                 LoginRequiredMixin,
+                                 CreateCMPRecordMixin)
 from market.models import InvestmentRecord
 
 
 User = get_user_model()
+
+
+class NewsView(LoginRequiredMixin, CreateCMPRecordMixin, ListView):
+    template_name = 'accounts/news.html'
+    queryset = News.objects.all()
 
 
 class LoanView(LoginRequiredMixin, CreateCMPRecordMixin, View):
@@ -45,15 +52,19 @@ class LoanView(LoginRequiredMixin, CreateCMPRecordMixin, View):
 
 
 def cancel_loan(request):
-    for user in User.objects.all():
-        user.cancel_loan()
-    return HttpResponse('Loan Deducted', status=200)
+    if request.user.is_authenticated() and request.user.is_admin:
+        for user in User.objects.all():
+            user.cancel_loan()
+        return HttpResponse('Loan Deducted', status=200)
+    return redirect('home')
 
 
 def deduct_interest(request):
-    for user in User.objects.all():
-        user.cancel_loan()
-    return HttpResponse('Interest Deducted', status=200)
+    if request.user.is_authenticated() and request.user.is_admin:
+        for user in User.objects.all():
+            user.cancel_loan()
+        return HttpResponse('Interest Deducted', status=200)
+    return redirect('home')
 
 
 class ProfileView(LoginRequiredMixin, CreateCMPRecordMixin, DetailView):

@@ -266,3 +266,16 @@ def post_save_user_create_receiver(sender, instance, created, *args, **kwargs):
         email_obj.send_activation()
 
 post_save.connect(post_save_user_create_receiver, sender=User)
+
+
+class News(models.Model):
+    title = models.CharField(max_length=120)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-timestamp', '-updated']
+
+    def __str__(self):
+        return self.title
