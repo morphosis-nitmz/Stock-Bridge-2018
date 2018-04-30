@@ -1,4 +1,5 @@
 from datetime import datetime
+from decimal import Decimal
 
 from django.conf import settings
 from django.shortcuts import render
@@ -84,8 +85,11 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
             user = request.user
             if quantity > 0:
                 if mode == 'buy':
-                    if user.buy_stocks(quantity, price):
-                        if company.user_buy_stocks(quantity):
+                    purchase_amount = Decimal(quantity) * price
+                    if user.cash >= purchase_amount:
+                        if company.stocks_remaining >= quantity:
+                            user.buy_stocks(quantity, price)
+                            company.user_buy_stocks(quantity)
                             obj = Transaction.objects.create(
                                 user=user,
                                 company=company,
