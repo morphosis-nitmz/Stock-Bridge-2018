@@ -7,6 +7,7 @@
 {% url 'leaderboard' as leaderboard_url %}
 {% url 'news' as news_url %}
 {% url 'account:loan' as loan_url %}
+{% url 'instructions' as instructions_url %}
 {% url 'profile' request.user.username as profile_url %}
 {% url 'market:company_select' as market_url %}
 
@@ -52,6 +53,7 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item {% if request.path == profile_url %}active{% endif %}" href="{{ profile_url }}">Profile</a>
 							<a class="dropdown-item {% if request.path == transaction_history_url %}active{% endif %}" href="{{ transaction_history_url }}">History</a>
+							<a class="dropdown-item {% if request.path == instructions_url %}active{% endif %}" href="{{ instructions_url }}">Instructions</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
 						</div>
