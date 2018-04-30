@@ -41,8 +41,8 @@ PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
 
 # Global settings
-START_TIME = datetime(2018, 4, 30, 2, 0, 0)
-STOP_TIME = datetime(2018, 4, 30, 19, 0, 0)
+START_TIME = datetime(2018, 4, 30, 17, 30, 0)
+STOP_TIME = datetime(2018, 5, 1, 1, 30, 0)
 LAST_ACTIVITY_TIME = START_TIME
 
 
@@ -163,7 +163,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
 
-# from stock_bridge.aws.conf import *
+from stock_bridge.aws.conf import *
 
 
 # removing SSL/TLS settings for local environment

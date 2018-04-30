@@ -42,8 +42,8 @@ PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
 
 # Global settings
-START_TIME = datetime(2018, 4, 30, 2, 0, 0)
-STOP_TIME = datetime(2018, 4, 30, 19, 0, 0)
+START_TIME = datetime(2018, 4, 30, 17, 30, 0)
+STOP_TIME = datetime(2018, 5, 1, 1, 30, 0)
 LAST_ACTIVITY_TIME = START_TIME
 
 

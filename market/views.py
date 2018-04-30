@@ -99,7 +99,7 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
                         else:
                             messages.error(request, 'The company does not have that many stocks left!')
                     else:
-                        messages.error(request, 'You cannot make a purchase of value more than your net worth!')
+                        messages.error(request, 'Insufficient Balance for this transaction!')
                 elif mode == 'sell':
                     investment_obj = InvestmentRecord.objects.get(user=user, company=company)
                     if quantity <= investment_obj.stocks and company.user_sell_stocks(quantity):

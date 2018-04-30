@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse
 from django.contrib import messages
@@ -5,6 +8,7 @@ from django.contrib.auth import get_user_model
 from django.views.generic import ListView, DetailView, FormView, CreateView, View
 from django.views.generic.edit import FormMixin
 from django.utils.safestring import mark_safe
+from django.utils import timezone
 from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
@@ -18,6 +22,9 @@ from market.models import InvestmentRecord
 
 
 User = get_user_model()
+
+START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
+STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
 
 class NewsView(LoginRequiredMixin, CreateCMPRecordMixin, ListView):
@@ -33,21 +40,29 @@ class LoanView(LoginRequiredMixin, CreateCMPRecordMixin, View):
         })
 
     def post(self, request, *args, **kwargs):
-        mode = request.POST.get('mode')
-        user = request.user
-        if mode == 'issue':
-            if user.issue_loan():
-                messages.success(request, 'Loan has been issued.')
-            else:
-                messages.error(request, 'You can issue loan atmost 5 times a day!')
-        elif mode == 'pay':
-            if user.pay_installment():
-                messages.success(request, 'Installment paid!')
-            else:
-                messages.error(
-                    request,
-                    'Minimum installment amount has to be INR 10,000 and you should have sufficient balance.'
-                )
+        current_time = timezone.make_aware(datetime.now())
+        if current_time >= START_TIME and current_time <= STOP_TIME:
+            mode = request.POST.get('mode')
+            user = request.user
+            if mode == 'issue':
+                if user.issue_loan():
+                    messages.success(request, 'Loan has been issued.')
+                else:
+                    messages.error(request, 'You can issue loan atmost 5 times a day!')
+            elif mode == 'pay':
+                if user.pay_installment():
+                    messages.success(request, 'Installment paid!')
+                else:
+                    messages.error(
+                        request,
+                        'Minimum installment amount has to be INR 10,000 and you should have sufficient balance.'
+                    )
+        else:
+            msg = 'The market will be live from {start} to {stop}'.format(
+                start=START_TIME.strftime('%H:%M'),
+                stop=STOP_TIME.strftime('%H:%M')
+            )
+            messages.info(request, msg)
         return redirect('account:loan')
 
 

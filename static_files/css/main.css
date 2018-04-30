@@ -52,13 +52,12 @@ a.dropdown-item.active {
 .home-heading {
     color: rgb(255, 255, 255);
     text-align: center;
-    padding-top: 200px;
-    font-family: 'foughtknight';
-    src: url('../static_files/fonts/foughtknight.ttf') format("truetype"), local('foughtknight');
+	padding-top: 200px;
+	font-size: 22px;
+    font-family: 'Aldrich';
 }
 
 .heading {
     text-align: center;
-    font-family: 'foughtknight';
-    src: url('../static_files/fonts/foughtknight.ttf') format("truetype"), local('foughtknight');
+    font-family: 'Aldrich';
 }

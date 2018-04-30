@@ -19,6 +19,7 @@ class CreateCMPRecordMixin(object):
         global LAST_ACTIVITY_TIME
         comparing_time = datetime.now() - timedelta(minutes=5)
         print(comparing_time)
+        print(LAST_ACTIVITY_TIME)
         if comparing_time >= LAST_ACTIVITY_TIME:
             LAST_ACTIVITY_TIME = datetime.now()
             print(LAST_ACTIVITY_TIME)

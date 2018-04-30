@@ -11,3 +11,7 @@ class HomeView(CreateCMPRecordMixin, View):
 
     def post(self, request, *args, **kwargs):
         return render(request, 'home.html', {})
+
+
+def instruction_view(request):
+    return render(request, 'instructions.html', {})

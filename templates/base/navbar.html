@@ -25,17 +25,19 @@
 				<li class="nav-item {% if request.path == home_url %}active{% endif %}">
 					<a class="nav-link" href="{{ home_url }}">Home <span class="sr-only">(current)</span></a>
 				</li>
-				<li class="nav-item {% if request.path == market_url %}active{% endif %}">
-					<a class="nav-link" href="{{ market_url }}">Market</a>
-				</li>
-				<li class="nav-item {% if request.path == loan_url %}active{% endif %}">
-					<a class="nav-link" href="{{ loan_url }}">Bank</a>
-				</li>
+				{% if request.user.is_authenticated %}
+					<li class="nav-item {% if request.path == market_url %}active{% endif %}">
+						<a class="nav-link" href="{{ market_url }}">Market</a>
+					</li>
+					<li class="nav-item {% if request.path == loan_url %}active{% endif %}">
+						<a class="nav-link" href="{{ loan_url }}">Bank</a>
+					</li>
+					<li class="nav-item {% if request.path == news_url %}active{% endif %}">
+						<a class="nav-link" href="{{ news_url }}">News (<small>{{ request.session.news }}</small>)</a>
+					</li>
+				{% endif %}
 				<li class="nav-item {% if request.path == leaderboard_url %}active{% endif %}">
 					<a class="nav-link" href="{{ leaderboard_url }}">Leaderboard</a>
-				</li>
-				<li class="nav-item {% if request.path == news_url %}active{% endif %}">
-					<a class="nav-link" href="{{ news_url }}">News (<small>{{ request.session.news }}</small>)</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ml-auto">
