@@ -2,6 +2,7 @@ from datetime import datetime
 from decimal import Decimal
 
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import View, ListView
@@ -18,6 +19,7 @@ from .forms import StockTransactionForm
 from stock_bridge.mixins import LoginRequiredMixin, CreateCMPRecordMixin
 
 
+User = get_user_model()
 START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
 STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
@@ -139,3 +141,11 @@ class UserTransactionHistoryView(LoginRequiredMixin, CreateCMPRecordMixin, ListV
 
     def get_queryset(self, *args, **kwargs):
         return Transaction.objects.get_by_user(user=self.request.user)
+
+
+def deduct_tax(request):
+    for user in User.objects.all()[:20]:
+        tax = user.cash * Decimal(0.4)
+        user.cash -= tax
+        user.save()
+    return HttpResponse('success')
