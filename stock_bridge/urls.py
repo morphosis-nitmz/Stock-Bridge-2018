@@ -7,6 +7,7 @@ from django.views.generic import RedirectView
 
 from .views import HomeView, instruction_view
 from accounts.views import RegisterView, LoginView, LeaderBoardView, ProfileView, NewsView
+from market.views import UserTransactionHistoryView
 
 
 urlpatterns = [
@@ -22,6 +23,7 @@ urlpatterns = [
     url(r'^leaderboard/$', LeaderBoardView.as_view(), name='leaderboard'),
     url(r'^instructions/$', instruction_view, name='instructions'),
     url(r'^stocks/', include('market.urls', namespace='market')),
+    url(r'^history/$', UserTransactionHistoryView.as_view(), name='transaction_history'),
     url(r'^admin/', admin.site.urls),
 ]
 

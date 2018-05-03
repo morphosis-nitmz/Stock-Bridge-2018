@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Transaction History</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-12 my-3">
+		<h1 class="heading">Transaction History</h1>
+	</div>
+</div>
+<div class="jumbotron" style="padding-top: 15px;padding-left: 10px ;padding-bottom: 5px;margin-bottom:10px;margin-top:8px; ">
+    <div class="row">
+        <div class="col-12 my-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">S. No.</th>
+                        <th class="text-center">Company</th>
+                        <th class="text-center">Mode</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                        <tr>
+                            <td class="text-center">{{ forloop.counter }}</td>
+                            <td class="text-center">{{ object.company }}</td>
+                            <td class="text-center">{{ object.mode }}</td>
+                            <td class="text-center">&#8377; {{ object.price }}</td>
+                            <td class="text-center">{{ object.num_stocks }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

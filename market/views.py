@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -24,6 +24,28 @@ from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin
 User = get_user_model()
 START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
 STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
+
+
+@login_required
+def deduct_tax(request):
+    if request.user.is_superuser:
+        for user in User.objects.all():
+            tax = user.cash * Decimal(0.4)
+            user.cash -= tax
+            user.save()
+        return HttpResponse('success')
+    return redirect('/')
+
+
+@login_required
+def update_market(request):
+    if request.user.is_superuser:
+        # update company cmp data
+        company_qs = Company.objects.all()
+        for company in company_qs:
+            company.update_cmp()
+        return HttpResponse('cmp updated')
+    return redirect('/')
 
 
 class CompanyCMPCreateView(View):
@@ -139,23 +161,8 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
         return HttpResponseRedirect(url)
 
 
-@login_required
-def deduct_tax(request):
-    if request.user.is_superuser:
-        for user in User.objects.all():
-            tax = user.cash * Decimal(0.4)
-            user.cash -= tax
-            user.save()
-        return HttpResponse('success')
-    return redirect('/')
+class UserTransactionHistoryView(LoginRequiredMixin, CountNewsMixin, ListView):
+    template_name = 'market/user_transaction_history.html'
 
-
-@login_required
-def update_market(request):
-    if request.user.is_superuser:
-        # update company cmp data
-        company_qs = Company.objects.all()
-        for company in company_qs:
-            company.update_cmp()
-        return HttpResponse('cmp updated')
-    return redirect('/')
+    def get_queryset(self, *args, **kwargs):
+        return Transaction.objects.get_by_user(user=self.request.user)

@@ -29,6 +29,24 @@ START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
 STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
 
+@login_required
+def cancel_loan(request):
+    if request.user.is_superuser:
+        for user in User.objects.all():
+            user.cancel_loan()
+        return HttpResponse('Loan Deducted', status=200)
+    return redirect('home')
+
+
+@login_required
+def deduct_interest(request):
+    if request.user.is_superuser:
+        for user in User.objects.all():
+            user.deduct_interest()
+        return HttpResponse('Interest Deducted', status=200)
+    return redirect('home')
+
+
 class NewsView(LoginRequiredMixin, CountNewsMixin, ListView):
     template_name = 'accounts/news.html'
     queryset = News.objects.all()
@@ -66,24 +84,6 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
             )
             messages.info(request, msg)
         return redirect('account:loan')
-
-
-@login_required
-def cancel_loan(request):
-    if request.user.is_superuser:
-        for user in User.objects.all():
-            user.cancel_loan()
-        return HttpResponse('Loan Deducted', status=200)
-    return redirect('home')
-
-
-@login_required
-def deduct_interest(request):
-    if request.user.is_superuser:
-        for user in User.objects.all():
-            user.deduct_interest()
-        return HttpResponse('Interest Deducted', status=200)
-    return redirect('home')
 
 
 class ProfileView(LoginRequiredMixin, CountNewsMixin, DetailView):
