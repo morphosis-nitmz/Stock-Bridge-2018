@@ -14,9 +14,9 @@ from django.utils.timezone import localtime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Company, Transaction, CompanyCMPRecord, InvestmentRecord
+from .models import Company, CompanyCMPRecord, InvestmentRecord
 from .forms import StockTransactionForm
-from stock_bridge.mixins import LoginRequiredMixin, CreateCMPRecordMixin
+from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin
 
 
 User = get_user_model()
@@ -32,7 +32,7 @@ class CompanyCMPCreateView(View):
         return HttpResponse('success')
 
 
-class CompanySelectionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
+class CompanySelectionView(LoginRequiredMixin, CountNewsMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'market/select_company.html', {
@@ -46,8 +46,8 @@ class CompanyCMPChartData(APIView):
 
     def get(self, request, format=None, *args, **kwargs):
         qs = CompanyCMPRecord.objects.filter(company__code=kwargs.get('code'))
-        if qs.count() > 50:
-            qs = qs[:50]
+        if qs.count() > 25:
+            qs = qs[:25]
         qs = reversed(qs)  # reverse timestamp sorting i.e. latest data should be in front
         labels = []
         cmp_data = []
@@ -65,7 +65,7 @@ class CompanyCMPChartData(APIView):
         return Response(data)
 
 
-class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
+class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
 
     def get(self, request, *args, **kwargs):
         company = Company.objects.get(code=kwargs.get('code'))
@@ -81,10 +81,11 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
         company = Company.objects.get(code=kwargs.get('code'))
         current_time = timezone.make_aware(datetime.now())
         if current_time >= START_TIME and current_time <= STOP_TIME:
+            user = request.user
             mode = request.POST.get('mode')
             quantity = int(request.POST.get('quantity'))
             price = company.cmp
-            user = request.user
+            investment_obj, obj_created = InvestmentRecord.objects.get_or_create(user=user, company=company)
             if quantity > 0:
                 if mode == 'buy':
                     purchase_amount = Decimal(quantity) * price
@@ -92,14 +93,7 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
                         if company.stocks_remaining >= quantity:
                             user.buy_stocks(quantity, price)
                             company.user_buy_stocks(quantity)
-                            obj = Transaction.objects.create(
-                                user=user,
-                                company=company,
-                                num_stocks=quantity,
-                                price=price,
-                                mode=mode,
-                                user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
-                            )
+                            investment_obj.add_stocks(quantity)
                             company.calculate_change(price)
                             messages.success(request, 'Transaction Complete!')
                         else:
@@ -107,17 +101,10 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
                     else:
                         messages.error(request, 'Insufficient Balance for this transaction!')
                 elif mode == 'sell':
-                    investment_obj = InvestmentRecord.objects.get(user=user, company=company)
-                    if quantity <= investment_obj.stocks and company.user_sell_stocks(quantity):
+                    if quantity <= investment_obj.stocks and quantity <= company.stocks_offered:
                         user.sell_stocks(quantity, price)
-                        obj = Transaction.objects.create(
-                            user=user,
-                            company=company,
-                            num_stocks=quantity,
-                            price=price,
-                            mode=mode,
-                            user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
-                        )
+                        company.user_sell_stocks(quantity)
+                        investment_obj.reduce_stocks(quantity)
                         company.calculate_change(price)
                         messages.success(request, 'Transaction Complete!')
                     else:
@@ -134,13 +121,6 @@ class CompanyTransactionView(LoginRequiredMixin, CreateCMPRecordMixin, View):
             messages.info(request, msg)
         url = reverse('market:transaction', kwargs={'code': company.code})
         return HttpResponseRedirect(url)
-
-
-class UserTransactionHistoryView(LoginRequiredMixin, CreateCMPRecordMixin, ListView):
-    template_name = 'market/user_transaction_history.html'
-
-    def get_queryset(self, *args, **kwargs):
-        return Transaction.objects.get_by_user(user=self.request.user)
 
 
 def deduct_tax(request):

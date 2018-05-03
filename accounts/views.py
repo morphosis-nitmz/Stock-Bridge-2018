@@ -17,7 +17,7 @@ from stock_bridge.mixins import (AnonymousRequiredMixin,
                                  RequestFormAttachMixin,
                                  NextUrlMixin,
                                  LoginRequiredMixin,
-                                 CreateCMPRecordMixin)
+                                 CountNewsMixin)
 from market.models import InvestmentRecord
 
 
@@ -27,12 +27,12 @@ START_TIME = timezone.make_aware(getattr(settings, 'START_TIME'))
 STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
 
-class NewsView(LoginRequiredMixin, CreateCMPRecordMixin, ListView):
+class NewsView(LoginRequiredMixin, CountNewsMixin, ListView):
     template_name = 'accounts/news.html'
     queryset = News.objects.all()
 
 
-class LoanView(LoginRequiredMixin, CreateCMPRecordMixin, View):
+class LoanView(LoginRequiredMixin, CountNewsMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'accounts/loan.html', {
@@ -82,7 +82,7 @@ def deduct_interest(request):
     return redirect('home')
 
 
-class ProfileView(LoginRequiredMixin, CreateCMPRecordMixin, DetailView):
+class ProfileView(LoginRequiredMixin, CountNewsMixin, DetailView):
     template_name = 'accounts/profile.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -106,7 +106,7 @@ class ProfileView(LoginRequiredMixin, CreateCMPRecordMixin, DetailView):
         return context
 
 
-class LeaderBoardView(CreateCMPRecordMixin, View):
+class LeaderBoardView(CountNewsMixin, View):
     template_name = 'accounts/leaderboard.html'
 
     def get(self, request, *args, **kwargs):

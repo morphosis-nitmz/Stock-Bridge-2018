@@ -10,23 +10,11 @@ from market.models import Company, CompanyCMPRecord
 from accounts.models import News
 
 
-LAST_ACTIVITY_TIME = getattr(settings, 'LAST_ACTIVITY_TIME')
-
-
-class CreateCMPRecordMixin(object):
+class CountNewsMixin(object):
 
     def dispatch(self, request, *args, **kwargs):
-        global LAST_ACTIVITY_TIME
-        comparing_time = datetime.now() - timedelta(minutes=5)
-        print(comparing_time)
-        print(LAST_ACTIVITY_TIME)
-        if comparing_time >= LAST_ACTIVITY_TIME:
-            LAST_ACTIVITY_TIME = datetime.now()
-            print(LAST_ACTIVITY_TIME)
-            for company in Company.objects.all():
-                CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
         request.session['news'] = News.objects.all().count()
-        return super(CreateCMPRecordMixin, self).dispatch(request, *args, **kwargs)
+        return super(CountNewsMixin, self).dispatch(request, *args, **kwargs)
 
 
 class AdminRequiredMixin(object):

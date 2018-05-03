@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import View
 
-from .mixins import CreateCMPRecordMixin
+from .mixins import CountNewsMixin
 
 
-class HomeView(CreateCMPRecordMixin, View):
+class HomeView(CountNewsMixin, View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'home.html', {})

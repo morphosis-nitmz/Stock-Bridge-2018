@@ -36,16 +36,15 @@ MANAGERS = (
 )
 ADMINS = MANAGERS
 
-
 # Bank Data
 DEFAULT_LOAN_AMOUNT = Decimal(10000.00)
 PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
+TAX_RATE = Decimal(0.40)  # 40%
 
 # Global settings
 START_TIME = datetime(2018, 4, 30, 17, 30, 0)
 STOP_TIME = datetime(2018, 5, 1, 1, 30, 0)
-LAST_ACTIVITY_TIME = START_TIME
 
 
 # Application definition

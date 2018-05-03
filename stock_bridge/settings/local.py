@@ -36,14 +36,14 @@ MANAGERS = (
 ADMINS = MANAGERS
 
 # Bank Data
-DEFAULT_LOAN_AMOUNT = Decimal(10000.00)
+DEFAULT_LOAN_AMOUNT = Decimal(5000.00)
 PRINCIPAL_INTEREST = Decimal(500.00)
 RATE_OF_INTEREST = Decimal(0.15)  # 15%
+TAX_RATE = Decimal(0.40)  # 40%
 
 # Global settings
-START_TIME = datetime(2018, 4, 30, 17, 30, 0)
-STOP_TIME = datetime(2018, 5, 1, 1, 30, 0)
-LAST_ACTIVITY_TIME = START_TIME
+START_TIME = datetime(2018, 5, 3, 10, 30, 0)
+STOP_TIME = datetime(2018, 5, 4, 1, 30, 0)
 
 
 # Application definition
@@ -163,7 +163,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
 
-from stock_bridge.aws.conf import *
+# from stock_bridge.aws.conf import *
 
 
 # removing SSL/TLS settings for local environment
