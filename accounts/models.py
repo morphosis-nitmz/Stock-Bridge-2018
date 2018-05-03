@@ -18,7 +18,6 @@ from stock_bridge.utils import unique_key_generator
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
 DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
 RATE_OF_INTEREST = getattr(settings, 'RATE_OF_INTEREST', Decimal(0.15))
-PRINCIPAL_INTEREST = getattr(settings, 'PRINCIPAL_INTEREST', Decimal(500.00))
 MAX_LOAN_ISSUE = getattr(settings, 'MAX_LOAN_ISSUE')
 
 
@@ -145,10 +144,9 @@ class User(AbstractBaseUser):
         return False
 
     def cancel_loan(self):
-        interest = Decimal((self.loan_count * (self.loan_count + 1)) / 2) * PRINCIPAL_INTEREST
         self.loan_count = 0
         self.loan_count_absolute = 0
-        self.cash = self.cash - self.loan - interest
+        self.cash = self.cash - self.loan
         self.loan = Decimal(0.00)
         self.save()
 
