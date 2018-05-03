@@ -3,19 +3,21 @@ from decimal import Decimal
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from django.views.generic import View, ListView
+from django.views.generic import View
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.utils import timezone
 from django.utils.timezone import localtime
+from django.utils.decorators import method_decorator
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .models import Company, CompanyCMPRecord, InvestmentRecord
 from .forms import StockTransactionForm
+from stock_bridge.decorators import login_required_message_and_redirect
 from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin
 
 
@@ -123,9 +125,23 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
         return HttpResponseRedirect(url)
 
 
+@method_decorator(login_required_message_and_redirect)
 def deduct_tax(request):
-    for user in User.objects.all()[:20]:
-        tax = user.cash * Decimal(0.4)
-        user.cash -= tax
-        user.save()
-    return HttpResponse('success')
+    if request.user.is_superuser:
+        for user in User.objects.all():
+            tax = user.cash * Decimal(0.4)
+            user.cash -= tax
+            user.save()
+        return HttpResponse('success')
+    return redirect('/')
+
+
+@method_decorator(login_required_message_and_redirect)
+def update_market(request):
+    if request.user.is_superuser:
+        # update company cmp data
+        company_qs = Company.objects.all()
+        for company in company_qs:
+            company.update_cmp()
+        return HttpResponse('cmp updated')
+    return redirect('/')

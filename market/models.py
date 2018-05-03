@@ -56,10 +56,18 @@ class Company(models.Model):
         self.change = ((self.cmp - old_price) / old_price) * Decimal(100.00)
         self.save()
 
+    def update_cmp(self):
+        self.cmp += (
+            self.cmp * Decimal(self.temp_stocks_bought) - self.cmp * Decimal(self.temp_stocks_sold)
+        ) / Decimal(self.stocks_offered)
+        self.temp_stocks_bought = 0
+        self.temp_stocks_sold = 0
+        self.save()
+
     def user_buy_stocks(self, quantity):
         if quantity <= self.stocks_remaining:
             self.stocks_remaining -= quantity
-            self.cmp = self.cmp + (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
+            self.temp_stocks_bought += quantity
             self.save()
             return True
         return False
@@ -67,7 +75,7 @@ class Company(models.Model):
     def user_sell_stocks(self, quantity):
         if quantity <= self.stocks_offered:
             self.stocks_remaining += quantity
-            self.cmp = self.cmp - (self.cmp * Decimal(quantity)) / Decimal(self.stocks_offered)
+            self.temp_stocks_sold += quantity
             self.save()
             return True
         return False
