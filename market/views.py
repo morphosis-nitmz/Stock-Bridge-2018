@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import View
 from django.core.urlresolvers import reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.utils.timezone import localtime
 from django.utils.decorators import method_decorator
@@ -15,9 +16,8 @@ from django.utils.decorators import method_decorator
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Company, CompanyCMPRecord, InvestmentRecord
+from .models import Company, CompanyCMPRecord, InvestmentRecord, Transaction
 from .forms import StockTransactionForm
-from stock_bridge.decorators import login_required_message_and_redirect
 from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin
 
 
@@ -48,8 +48,8 @@ class CompanyCMPChartData(APIView):
 
     def get(self, request, format=None, *args, **kwargs):
         qs = CompanyCMPRecord.objects.filter(company__code=kwargs.get('code'))
-        if qs.count() > 25:
-            qs = qs[:25]
+        if qs.count() > 15:
+            qs = qs[:15]
         qs = reversed(qs)  # reverse timestamp sorting i.e. latest data should be in front
         labels = []
         cmp_data = []
@@ -93,9 +93,17 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
                     purchase_amount = Decimal(quantity) * price
                     if user.cash >= purchase_amount:
                         if company.stocks_remaining >= quantity:
-                            user.buy_stocks(quantity, price)
-                            company.user_buy_stocks(quantity)
-                            investment_obj.add_stocks(quantity)
+                            # user.buy_stocks(quantity, price)
+                            # company.user_buy_stocks(quantity)
+                            # investment_obj.add_stocks(quantity)
+                            obj = Transaction.objects.create(
+                                user=user,
+                                company=company,
+                                num_stocks=quantity,
+                                price=price,
+                                mode=mode,
+                                user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
+                            )
                             messages.success(request, 'Transaction Complete!')
                         else:
                             messages.error(request, 'The company does not have that many stocks left!')
@@ -103,9 +111,17 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
                         messages.error(request, 'Insufficient Balance for this transaction!')
                 elif mode == 'sell':
                     if quantity <= investment_obj.stocks and quantity <= company.stocks_offered:
-                        user.sell_stocks(quantity, price)
-                        company.user_sell_stocks(quantity)
-                        investment_obj.reduce_stocks(quantity)
+                        # user.sell_stocks(quantity, price)
+                        # company.user_sell_stocks(quantity)
+                        # investment_obj.reduce_stocks(quantity)
+                        obj = Transaction.objects.create(
+                            user=user,
+                            company=company,
+                            num_stocks=quantity,
+                            price=price,
+                            mode=mode,
+                            user_net_worth=InvestmentRecord.objects.calculate_net_worth(user)
+                        )
                         messages.success(request, 'Transaction Complete!')
                     else:
                         messages.error(request, 'Please enter a valid quantity!')
@@ -123,7 +139,7 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
         return HttpResponseRedirect(url)
 
 
-@method_decorator(login_required_message_and_redirect)
+@login_required
 def deduct_tax(request):
     if request.user.is_superuser:
         for user in User.objects.all():
@@ -134,8 +150,9 @@ def deduct_tax(request):
     return redirect('/')
 
 
+@login_required
 def update_market(request):
-    if request.user.is_authenticated() and request.user.is_superuser:
+    if request.user.is_superuser:
         # update company cmp data
         company_qs = Company.objects.all()
         for company in company_qs:

@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponse
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, FormView, CreateView, View
 from django.views.generic.edit import FormMixin
 from django.utils.safestring import mark_safe
@@ -14,7 +15,6 @@ from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation, News
-from stock_bridge.decorators import login_required_message_and_redirect
 from stock_bridge.mixins import (AnonymousRequiredMixin,
                                  RequestFormAttachMixin,
                                  NextUrlMixin,
@@ -68,7 +68,7 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
         return redirect('account:loan')
 
 
-@method_decorator(login_required_message_and_redirect)
+@login_required
 def cancel_loan(request):
     if request.user.is_superuser:
         for user in User.objects.all():
@@ -77,7 +77,7 @@ def cancel_loan(request):
     return redirect('home')
 
 
-@method_decorator(login_required_message_and_redirect)
+@login_required
 def deduct_interest(request):
     if request.user.is_superuser:
         for user in User.objects.all():
