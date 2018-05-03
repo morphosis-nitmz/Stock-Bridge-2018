@@ -9,10 +9,12 @@ from django.views.generic import ListView, DetailView, FormView, CreateView, Vie
 from django.views.generic.edit import FormMixin
 from django.utils.safestring import mark_safe
 from django.utils import timezone
+from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation, News
+from stock_bridge.decorators import login_required_message_and_redirect
 from stock_bridge.mixins import (AnonymousRequiredMixin,
                                  RequestFormAttachMixin,
                                  NextUrlMixin,
@@ -66,18 +68,20 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
         return redirect('account:loan')
 
 
+@method_decorator(login_required_message_and_redirect)
 def cancel_loan(request):
-    if request.user.is_authenticated() and request.user.is_admin:
+    if request.user.is_superuser:
         for user in User.objects.all():
             user.cancel_loan()
         return HttpResponse('Loan Deducted', status=200)
     return redirect('home')
 
 
+@method_decorator(login_required_message_and_redirect)
 def deduct_interest(request):
-    if request.user.is_authenticated() and request.user.is_admin:
+    if request.user.is_superuser:
         for user in User.objects.all():
-            user.cancel_loan()
+            user.deduct_interest()
         return HttpResponse('Interest Deducted', status=200)
     return redirect('home')
 

@@ -7,7 +7,7 @@ from .views import (
     CompanyCMPCreateView,
     deduct_tax,
     update_market
-                    )
+)
 
 
 urlpatterns = [

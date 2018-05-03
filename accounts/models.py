@@ -19,6 +19,7 @@ DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
 DEFAULT_LOAN_AMOUNT = getattr(settings, 'DEFAULT_LOAN_AMOUNT', Decimal(10000.00))
 RATE_OF_INTEREST = getattr(settings, 'RATE_OF_INTEREST', Decimal(0.15))
 PRINCIPAL_INTEREST = getattr(settings, 'PRINCIPAL_INTEREST', Decimal(500.00))
+MAX_LOAN_ISSUE = getattr(settings, 'MAX_LOAN_ISSUE')
 
 
 class UserManager(BaseUserManager):
@@ -125,7 +126,7 @@ class User(AbstractBaseUser):
         self.save()
 
     def issue_loan(self):
-        if self.loan_count_absolute < 5:
+        if self.loan_count_absolute < MAX_LOAN_ISSUE:
             self.loan_count += 1
             self.loan_count_absolute += 1
             self.loan += DEFAULT_LOAN_AMOUNT
@@ -271,6 +272,7 @@ post_save.connect(post_save_user_create_receiver, sender=User)
 class News(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
+    is_active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
