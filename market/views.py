@@ -96,7 +96,6 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
                             user.buy_stocks(quantity, price)
                             company.user_buy_stocks(quantity)
                             investment_obj.add_stocks(quantity)
-                            company.calculate_change(price)
                             messages.success(request, 'Transaction Complete!')
                         else:
                             messages.error(request, 'The company does not have that many stocks left!')
@@ -107,7 +106,6 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
                         user.sell_stocks(quantity, price)
                         company.user_sell_stocks(quantity)
                         investment_obj.reduce_stocks(quantity)
-                        company.calculate_change(price)
                         messages.success(request, 'Transaction Complete!')
                     else:
                         messages.error(request, 'Please enter a valid quantity!')
@@ -136,9 +134,8 @@ def deduct_tax(request):
     return redirect('/')
 
 
-@method_decorator(login_required_message_and_redirect)
 def update_market(request):
-    if request.user.is_superuser:
+    if request.user.is_authenticated() and request.user.is_superuser:
         # update company cmp data
         company_qs = Company.objects.all()
         for company in company_qs:

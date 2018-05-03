@@ -57,9 +57,11 @@ class Company(models.Model):
         self.save()
 
     def update_cmp(self):
+        old_price = self.cmp
         self.cmp += (
             self.cmp * Decimal(self.temp_stocks_bought) - self.cmp * Decimal(self.temp_stocks_sold)
         ) / Decimal(self.stocks_offered)
+        self.calculate_change(old_price)
         self.temp_stocks_bought = 0
         self.temp_stocks_sold = 0
         self.save()
