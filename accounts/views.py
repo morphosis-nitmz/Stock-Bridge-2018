@@ -78,10 +78,11 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
                         'Minimum installment amount has to be INR 5,000 and you should have sufficient balance.'
                     )
         else:
-            msg = 'The market will be live from {start} to {stop}'.format(
-                start=START_TIME.strftime('%H:%M'),
-                stop=STOP_TIME.strftime('%H:%M')
-            )
+            # msg = 'The market will be live from {start} to {stop}'.format(
+            #     start=START_TIME.strftime('%H:%M'),
+            #     stop=STOP_TIME.strftime('%H:%M')
+            # )
+            msg = 'The market is closed!'
             messages.info(request, msg)
         return redirect('account:loan')
 
