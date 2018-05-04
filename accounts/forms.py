@@ -156,8 +156,8 @@ class RegisterForm(forms.ModelForm):
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        if not re.match(r'^\w\_+$', username):
-            raise forms.ValidationError('username can contain only alphabets, numbers and underscores')
+        if not re.match(r'^[\w]+$', username):
+            raise forms.ValidationError('username can contain only alphabets and numbers')
         return username
 
     def save(self, commit=True):
