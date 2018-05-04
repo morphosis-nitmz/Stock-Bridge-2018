@@ -16,8 +16,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .models import Company, CompanyCMPRecord, InvestmentRecord, Transaction
-from .forms import StockTransactionForm
-from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin
+from .forms import StockTransactionForm, CompanyChangeForm
+from stock_bridge.mixins import LoginRequiredMixin, CountNewsMixin, AdminRequiredMixin
 
 
 User = get_user_model()
@@ -46,6 +46,28 @@ def update_market(request):
             obj = CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
         return HttpResponse('cmp updated')
     return redirect('/')
+
+
+class CompanyAdminCompanyUpdateView(AdminRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        company = Company.objects.get(code=kwargs.get('code'))
+        return render(request, 'market/admin_company_change.html', {
+            'object': company,
+            'company_list': Company.objects.all(),
+            'form': CompanyChangeForm()
+        })
+
+    def post(self, request, *args, **kwargs):
+        company = Company.objects.get(code=kwargs.get('code'))
+        price = request.POST.get('price')
+        old_price = company.cmp
+        company.cmp = Decimal(int(price))
+        company.save()
+        company.calculate_change(old_price)
+        print('price', int(price))
+        url = reverse('market:admin', kwargs={'code': company.code})
+        return HttpResponseRedirect(url)
 
 
 class CompanyCMPCreateView(View):

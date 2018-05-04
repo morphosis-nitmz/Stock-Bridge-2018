@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block base_head %}
+<title>Admin Market</title>
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light mt-3 mb-4" style="background-color: #dcdce1; font-color: #000000;">
+  <a class="navbar-brand" href="#">Companies</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        {% for company in company_list %}
+            {% if company == object %}
+                <li class="nav-item active">
+                    <a class="nav-link anchor-black" href="{{ company.get_absolute_admin_url }}">{{ company.name }}</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link anchor-black" href="{{ company.get_absolute_admin_url }}">{{ company.name }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+</nav>
+
+<div class="row">
+    <div class="col mx-auto my-3">
+        <div class="text-center">
+            <h1 class="heading">{{ object.name }}</h1>
+            <p>
+                <strong>Industry:</strong> {{ object.industry }}<br>
+                <strong>Cap Type:</strong> {{ object.get_cap }}<br>
+                <strong>Cap Size:</strong> &#8377; {{ object.cap|intcomma }}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-8 my-5 mr-auto">
+        <canvas id="cmpChart" width="400" height="200"></canvas>
+    </div>
+    <div class="col-12 col-md-4 my-5 ml-auto text-center">
+        <h3>{{ object.code }}</h3>
+        Total Stocks: {{ object.stocks_offered }}<br>
+        Stocks Remaining: {{ object.stocks_remaining }}<br>
+        Current Price per stock: &#8377; {{ object.cmp }}
+        {% if object.change >= 0 %}
+            <small style="color: green">({{ object.change }}%) <i class="fa fa-arrow-up"></i></small><br>
+        {% elif object.change < 0 %}
+            <small style="color: red">({{ object.change }}%) <i class="fa fa-arrow-down"></i></small><br>
+        {% endif %}
+        Stocks Currently Owned: {{ stocks_owned }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-6 text-center mx-auto mt-5">
+        <form method="POST" action="{% url 'market:admin' object.code %}"> {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Change</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

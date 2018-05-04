@@ -20,7 +20,7 @@ class CountNewsMixin(object):
 class AdminRequiredMixin(object):
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated() and request.user.is_admin:
+        if request.user.is_authenticated() and request.user.is_superuser:
             return super(AdminRequiredMixin, self).dispatch(request, *args, **kwargs)
         return redirect(getattr(settings, 'LOGIN_URL_REDIRECT', '/'))
 
