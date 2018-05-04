@@ -96,6 +96,7 @@ class CompanyTransactionView(LoginRequiredMixin, CountNewsMixin, View):
         stocks_owned = obj.stocks
         return render(request, 'market/transaction_market.html', {
             'object': company,
+            'company_list': Company.objects.all(),
             'stocks_owned': stocks_owned,
             'form': StockTransactionForm()
         })

@@ -8,12 +8,14 @@
     "cap": "100000000000.00",
     "cmp": "115.74",
     "change": "0.00",
-    "stocks_offered": 100000,
-    "stocks_remaining": 100000,
+    "stocks_offered": 20000000,
+    "stocks_remaining": 20000000,
     "cap_type": "large",
     "industry": "IT Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:10:03.092Z",
-    "updated": "2018-04-29T12:53:03.880Z"
+    "updated": "2018-05-04T08:47:31.257Z"
   }
 },
 {
@@ -25,12 +27,14 @@
     "cap": "150000000000.00",
     "cmp": "120.00",
     "change": "0.00",
-    "stocks_offered": 100000,
-    "stocks_remaining": 100000,
+    "stocks_offered": 20000000,
+    "stocks_remaining": 20000000,
     "cap_type": "large",
     "industry": "IT Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:11:04.035Z",
-    "updated": "2018-04-29T12:52:48.357Z"
+    "updated": "2018-05-04T08:47:38.682Z"
   }
 },
 {
@@ -42,12 +46,14 @@
     "cap": "80000000000.00",
     "cmp": "175.36",
     "change": "0.00",
-    "stocks_offered": 70000,
-    "stocks_remaining": 70000,
+    "stocks_offered": 20000000,
+    "stocks_remaining": 20000000,
     "cap_type": "large",
     "industry": "IT Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:11:58.668Z",
-    "updated": "2018-04-29T12:52:31.905Z"
+    "updated": "2018-05-04T08:47:49.993Z"
   }
 },
 {
@@ -59,12 +65,14 @@
     "cap": "45000000000.00",
     "cmp": "250.21",
     "change": "0.00",
-    "stocks_offered": 50000,
-    "stocks_remaining": 50000,
+    "stocks_offered": 5000000,
+    "stocks_remaining": 5000000,
     "cap_type": "mid",
     "industry": "Oil Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:13:12.769Z",
-    "updated": "2018-04-29T12:51:46.363Z"
+    "updated": "2018-05-04T08:48:43.716Z"
   }
 },
 {
@@ -76,12 +84,14 @@
     "cap": "42000000000.00",
     "cmp": "260.11",
     "change": "0.00",
-    "stocks_offered": 45000,
-    "stocks_remaining": 45000,
+    "stocks_offered": 5000000,
+    "stocks_remaining": 5000000,
     "cap_type": "mid",
     "industry": "Consumer Durables and Retail Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:13:55.903Z",
-    "updated": "2018-04-29T12:51:14.471Z"
+    "updated": "2018-05-04T08:48:30.202Z"
   }
 },
 {
@@ -93,12 +103,14 @@
     "cap": "40000000000.00",
     "cmp": "300.33",
     "change": "0.00",
-    "stocks_offered": 30000,
-    "stocks_remaining": 30000,
+    "stocks_offered": 5000000,
+    "stocks_remaining": 5000000,
     "cap_type": "mid",
     "industry": "Manufacturing Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:15:56.147Z",
-    "updated": "2018-04-29T12:48:58.392Z"
+    "updated": "2018-05-04T08:48:58.997Z"
   }
 },
 {
@@ -110,12 +122,14 @@
     "cap": "800000000.00",
     "cmp": "700.21",
     "change": "0.00",
-    "stocks_offered": 5000,
-    "stocks_remaining": 5000,
+    "stocks_offered": 2000000,
+    "stocks_remaining": 2000000,
     "cap_type": "small",
     "industry": "Furniture Sector",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:16:56.926Z",
-    "updated": "2018-04-29T12:50:20.130Z"
+    "updated": "2018-05-04T08:49:33.444Z"
   }
 },
 {
@@ -127,12 +141,14 @@
     "cap": "700000000.00",
     "cmp": "750.21",
     "change": "0.00",
-    "stocks_offered": 2000,
-    "stocks_remaining": 2000,
+    "stocks_offered": 2000000,
+    "stocks_remaining": 2000000,
     "cap_type": "small",
     "industry": "Apparels and Shopping",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:17:34.468Z",
-    "updated": "2018-04-29T12:49:55.586Z"
+    "updated": "2018-05-04T08:49:45.854Z"
   }
 },
 {
@@ -144,12 +160,14 @@
     "cap": "500000000.00",
     "cmp": "900.14",
     "change": "0.00",
-    "stocks_offered": 1000,
-    "stocks_remaining": 1000,
+    "stocks_offered": 2000000,
+    "stocks_remaining": 2000000,
     "cap_type": "small",
     "industry": "Telecommunication",
+    "temp_stocks_bought": 0,
+    "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:18:11.990Z",
-    "updated": "2018-04-29T12:49:32.729Z"
+    "updated": "2018-05-04T08:49:22.872Z"
   }
 },
 {
