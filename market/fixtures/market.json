@@ -6,16 +6,16 @@
     "code": "NCSFT",
     "name": "Nicrosoft",
     "cap": "100000000000.00",
-    "cmp": "115.74",
+    "cmp": "115.78",
     "change": "0.00",
-    "stocks_offered": 20000000,
-    "stocks_remaining": 20000000,
+    "stocks_offered": 100000,
+    "stocks_remaining": 100000,
     "cap_type": "large",
     "industry": "IT Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:10:03.092Z",
-    "updated": "2018-05-04T08:47:31.257Z"
+    "updated": "2018-05-04T13:20:42.457Z"
   }
 },
 {
@@ -25,16 +25,16 @@
     "code": "DGL",
     "name": "Doogle",
     "cap": "150000000000.00",
-    "cmp": "120.00",
-    "change": "0.00",
-    "stocks_offered": 20000000,
-    "stocks_remaining": 20000000,
+    "cmp": "120.02",
+    "change": "0.02",
+    "stocks_offered": 100000,
+    "stocks_remaining": 100000,
     "cap_type": "large",
     "industry": "IT Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:11:04.035Z",
-    "updated": "2018-05-04T08:47:38.682Z"
+    "updated": "2018-05-04T13:19:32.344Z"
   }
 },
 {
@@ -46,14 +46,14 @@
     "cap": "80000000000.00",
     "cmp": "175.36",
     "change": "0.00",
-    "stocks_offered": 20000000,
-    "stocks_remaining": 20000000,
+    "stocks_offered": 100000,
+    "stocks_remaining": 100000,
     "cap_type": "large",
     "industry": "IT Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:11:58.668Z",
-    "updated": "2018-05-04T08:47:49.993Z"
+    "updated": "2018-05-04T13:20:53.255Z"
   }
 },
 {
@@ -65,14 +65,14 @@
     "cap": "45000000000.00",
     "cmp": "250.21",
     "change": "0.00",
-    "stocks_offered": 5000000,
-    "stocks_remaining": 5000000,
+    "stocks_offered": 65000,
+    "stocks_remaining": 65000,
     "cap_type": "mid",
     "industry": "Oil Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:13:12.769Z",
-    "updated": "2018-05-04T08:48:43.716Z"
+    "updated": "2018-05-04T13:29:30.818Z"
   }
 },
 {
@@ -84,14 +84,14 @@
     "cap": "42000000000.00",
     "cmp": "260.11",
     "change": "0.00",
-    "stocks_offered": 5000000,
-    "stocks_remaining": 5000000,
+    "stocks_offered": 65000,
+    "stocks_remaining": 65000,
     "cap_type": "mid",
     "industry": "Consumer Durables and Retail Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:13:55.903Z",
-    "updated": "2018-05-04T08:48:30.202Z"
+    "updated": "2018-05-04T13:28:36.705Z"
   }
 },
 {
@@ -103,14 +103,14 @@
     "cap": "40000000000.00",
     "cmp": "300.33",
     "change": "0.00",
-    "stocks_offered": 5000000,
-    "stocks_remaining": 5000000,
+    "stocks_offered": 65000,
+    "stocks_remaining": 65000,
     "cap_type": "mid",
     "industry": "Manufacturing Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:15:56.147Z",
-    "updated": "2018-05-04T08:48:58.997Z"
+    "updated": "2018-05-04T13:29:50.545Z"
   }
 },
 {
@@ -122,14 +122,14 @@
     "cap": "800000000.00",
     "cmp": "700.21",
     "change": "0.00",
-    "stocks_offered": 2000000,
-    "stocks_remaining": 2000000,
+    "stocks_offered": 30000,
+    "stocks_remaining": 30000,
     "cap_type": "small",
     "industry": "Furniture Sector",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:16:56.926Z",
-    "updated": "2018-05-04T08:49:33.444Z"
+    "updated": "2018-05-04T13:31:57.441Z"
   }
 },
 {
@@ -141,14 +141,14 @@
     "cap": "700000000.00",
     "cmp": "750.21",
     "change": "0.00",
-    "stocks_offered": 2000000,
-    "stocks_remaining": 2000000,
+    "stocks_offered": 30000,
+    "stocks_remaining": 30000,
     "cap_type": "small",
     "industry": "Apparels and Shopping",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:17:34.468Z",
-    "updated": "2018-05-04T08:49:45.854Z"
+    "updated": "2018-05-04T13:32:06.805Z"
   }
 },
 {
@@ -158,16 +158,394 @@
     "code": "DPS",
     "name": "Dipsim",
     "cap": "500000000.00",
-    "cmp": "900.14",
+    "cmp": "922.49",
     "change": "0.00",
-    "stocks_offered": 2000000,
-    "stocks_remaining": 2000000,
+    "stocks_offered": 30000,
+    "stocks_remaining": 30000,
     "cap_type": "small",
     "industry": "Telecommunication",
     "temp_stocks_bought": 0,
     "temp_stocks_sold": 0,
     "timestamp": "2018-04-28T05:18:11.990Z",
-    "updated": "2018-05-04T08:49:22.872Z"
+    "updated": "2018-05-04T13:31:42.582Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "company": 5,
+    "num_stocks": 5,
+    "price": "260.11",
+    "mode": "buy",
+    "user_net_worth": "5000.00",
+    "timestamp": "2018-05-04T10:47:13.734Z",
+    "updated": "2018-05-04T10:47:13.734Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 10,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "5000.00",
+    "timestamp": "2018-05-04T10:48:00.871Z",
+    "updated": "2018-05-04T10:48:00.871Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "company": 2,
+    "num_stocks": 2,
+    "price": "120.00",
+    "mode": "buy",
+    "user_net_worth": "5000.00",
+    "timestamp": "2018-05-04T10:48:39.844Z",
+    "updated": "2018-05-04T10:48:39.844Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 4,
+  "fields": {
+    "user": 3,
+    "company": 2,
+    "num_stocks": 20,
+    "price": "120.00",
+    "mode": "buy",
+    "user_net_worth": "5000.00",
+    "timestamp": "2018-05-04T10:49:00.753Z",
+    "updated": "2018-05-04T10:49:00.753Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "company": 1,
+    "num_stocks": 20,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "5000.00",
+    "timestamp": "2018-05-04T10:49:47.129Z",
+    "updated": "2018-05-04T10:49:47.129Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 6,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 500,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:51:36.260Z",
+    "updated": "2018-05-04T10:51:36.260Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 7,
+  "fields": {
+    "user": 2,
+    "company": 2,
+    "num_stocks": 500,
+    "price": "120.00",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:51:46.344Z",
+    "updated": "2018-05-04T10:51:46.344Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 1000,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:52:28.679Z",
+    "updated": "2018-05-04T10:52:28.679Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 9,
+  "fields": {
+    "user": 2,
+    "company": 3,
+    "num_stocks": 500,
+    "price": "175.36",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:52:49.601Z",
+    "updated": "2018-05-04T10:52:49.601Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 500,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:53:28.906Z",
+    "updated": "2018-05-04T10:53:28.906Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 11,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 800,
+    "price": "115.74",
+    "mode": "buy",
+    "user_net_worth": "998177.12",
+    "timestamp": "2018-05-04T10:53:37.582Z",
+    "updated": "2018-05-04T10:53:37.582Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 500,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:54:10.266Z",
+    "updated": "2018-05-04T10:54:10.266Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 13,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 500,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:54:49.559Z",
+    "updated": "2018-05-04T10:54:49.559Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 14,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 1000,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:54:56.737Z",
+    "updated": "2018-05-04T10:54:56.737Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 15,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 1000,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:55:04.681Z",
+    "updated": "2018-05-04T10:55:04.681Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 16,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 1000,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:55:12.923Z",
+    "updated": "2018-05-04T10:55:12.923Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 17,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 500,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:55:24.561Z",
+    "updated": "2018-05-04T10:55:24.562Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 18,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 10,
+    "price": "115.75",
+    "mode": "buy",
+    "user_net_worth": "998205.22",
+    "timestamp": "2018-05-04T10:55:59.618Z",
+    "updated": "2018-05-04T10:55:59.618Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 19,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 10,
+    "price": "115.78",
+    "mode": "buy",
+    "user_net_worth": "998424.82",
+    "timestamp": "2018-05-04T10:56:09.332Z",
+    "updated": "2018-05-04T10:56:09.332Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 20,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "num_stocks": 3,
+    "price": "115.78",
+    "mode": "buy",
+    "user_net_worth": "998424.82",
+    "timestamp": "2018-05-04T10:56:34.341Z",
+    "updated": "2018-05-04T10:56:34.341Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 21,
+  "fields": {
+    "user": 2,
+    "company": 2,
+    "num_stocks": 1,
+    "price": "120.00",
+    "mode": "buy",
+    "user_net_worth": "998424.82",
+    "timestamp": "2018-05-04T10:59:29.776Z",
+    "updated": "2018-05-04T10:59:29.776Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 22,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "num_stocks": 1000,
+    "price": "900.14",
+    "mode": "buy",
+    "user_net_worth": "1000998355.29",
+    "timestamp": "2018-05-04T11:00:52.195Z",
+    "updated": "2018-05-04T11:00:52.195Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 23,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "num_stocks": 10000,
+    "price": "900.14",
+    "mode": "buy",
+    "user_net_worth": "1000998355.29",
+    "timestamp": "2018-05-04T11:01:02.702Z",
+    "updated": "2018-05-04T11:01:02.702Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 24,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "num_stocks": 50000,
+    "price": "900.14",
+    "mode": "buy",
+    "user_net_worth": "1000998355.29",
+    "timestamp": "2018-05-04T11:01:15.948Z",
+    "updated": "2018-05-04T11:01:15.948Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 25,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "num_stocks": 1000,
+    "price": "927.59",
+    "mode": "sell",
+    "user_net_worth": "1002672805.29",
+    "timestamp": "2018-05-04T11:02:07.379Z",
+    "updated": "2018-05-04T11:02:07.379Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 26,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "num_stocks": 10000,
+    "price": "927.13",
+    "mode": "sell",
+    "user_net_worth": "1002645205.29",
+    "timestamp": "2018-05-04T11:02:45.076Z",
+    "updated": "2018-05-04T11:02:45.076Z"
+  }
+},
+{
+  "model": "market.transaction",
+  "pk": 27,
+  "fields": {
+    "user": 3,
+    "company": 2,
+    "num_stocks": 15,
+    "price": "120.00",
+    "mode": "buy",
+    "user_net_worth": "14715.60",
+    "timestamp": "2018-05-04T11:34:05.909Z",
+    "updated": "2018-05-04T11:34:05.909Z"
   }
 },
 {
@@ -258,6 +636,2886 @@
     "company": 9,
     "stocks": 0,
     "updated": "2018-04-29T12:30:58.785Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "company": 2,
+    "stocks": 503,
+    "updated": "2018-05-04T10:59:29.569Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 11,
+  "fields": {
+    "user": 2,
+    "company": 1,
+    "stocks": 7333,
+    "updated": "2018-05-04T10:56:34.108Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "company": 3,
+    "stocks": 500,
+    "updated": "2018-05-04T10:52:49.386Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 13,
+  "fields": {
+    "user": 2,
+    "company": 5,
+    "stocks": 5,
+    "updated": "2018-05-04T10:47:13.530Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 14,
+  "fields": {
+    "user": 2,
+    "company": 4,
+    "stocks": 0,
+    "updated": "2018-05-04T10:42:05.819Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 15,
+  "fields": {
+    "user": 2,
+    "company": 6,
+    "stocks": 0,
+    "updated": "2018-05-04T10:42:06.043Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 16,
+  "fields": {
+    "user": 2,
+    "company": 9,
+    "stocks": 50000,
+    "updated": "2018-05-04T11:02:44.876Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 17,
+  "fields": {
+    "user": 2,
+    "company": 7,
+    "stocks": 0,
+    "updated": "2018-05-04T10:42:06.556Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 18,
+  "fields": {
+    "user": 2,
+    "company": 8,
+    "stocks": 0,
+    "updated": "2018-05-04T10:42:06.744Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 19,
+  "fields": {
+    "user": 3,
+    "company": 2,
+    "stocks": 35,
+    "updated": "2018-05-04T11:34:05.698Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 20,
+  "fields": {
+    "user": 3,
+    "company": 1,
+    "stocks": 20,
+    "updated": "2018-05-04T10:49:46.941Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 21,
+  "fields": {
+    "user": 3,
+    "company": 3,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:08.602Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 22,
+  "fields": {
+    "user": 3,
+    "company": 5,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:08.801Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 23,
+  "fields": {
+    "user": 3,
+    "company": 4,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:08.990Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 24,
+  "fields": {
+    "user": 3,
+    "company": 6,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:09.200Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 25,
+  "fields": {
+    "user": 3,
+    "company": 9,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:09.400Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 26,
+  "fields": {
+    "user": 3,
+    "company": 7,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:09.623Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 27,
+  "fields": {
+    "user": 3,
+    "company": 8,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:09.829Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 28,
+  "fields": {
+    "user": 4,
+    "company": 2,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:50.783Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 29,
+  "fields": {
+    "user": 4,
+    "company": 1,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:51.055Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 30,
+  "fields": {
+    "user": 4,
+    "company": 3,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:51.280Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 31,
+  "fields": {
+    "user": 4,
+    "company": 5,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:51.487Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 32,
+  "fields": {
+    "user": 4,
+    "company": 4,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:51.702Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 33,
+  "fields": {
+    "user": 4,
+    "company": 6,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:51.912Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 34,
+  "fields": {
+    "user": 4,
+    "company": 9,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:52.097Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 35,
+  "fields": {
+    "user": 4,
+    "company": 7,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:52.300Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 36,
+  "fields": {
+    "user": 4,
+    "company": 8,
+    "stocks": 0,
+    "updated": "2018-05-04T10:46:52.511Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 37,
+  "fields": {
+    "user": 5,
+    "company": 2,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:28.352Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 38,
+  "fields": {
+    "user": 5,
+    "company": 1,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:28.600Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 39,
+  "fields": {
+    "user": 5,
+    "company": 3,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:28.788Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 40,
+  "fields": {
+    "user": 5,
+    "company": 5,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:28.951Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 41,
+  "fields": {
+    "user": 5,
+    "company": 4,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:29.117Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 42,
+  "fields": {
+    "user": 5,
+    "company": 6,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:29.295Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 43,
+  "fields": {
+    "user": 5,
+    "company": 9,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:29.483Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 44,
+  "fields": {
+    "user": 5,
+    "company": 7,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:29.687Z"
+  }
+},
+{
+  "model": "market.investmentrecord",
+  "pk": 45,
+  "fields": {
+    "user": 5,
+    "company": 8,
+    "stocks": 0,
+    "updated": "2018-05-04T10:47:29.871Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 1,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:43:21.807Z",
+    "updated": "2018-05-04T10:43:21.807Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 2,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:43:22.295Z",
+    "updated": "2018-05-04T10:43:22.295Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 3,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:43:22.559Z",
+    "updated": "2018-05-04T10:43:22.559Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 4,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:43:22.771Z",
+    "updated": "2018-05-04T10:43:22.771Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 5,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:43:22.948Z",
+    "updated": "2018-05-04T10:43:22.948Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 6,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:43:23.170Z",
+    "updated": "2018-05-04T10:43:23.170Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 7,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:43:23.392Z",
+    "updated": "2018-05-04T10:43:23.392Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 8,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:43:23.592Z",
+    "updated": "2018-05-04T10:43:23.592Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 9,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:43:23.814Z",
+    "updated": "2018-05-04T10:43:23.814Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 10,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:48:23.975Z",
+    "updated": "2018-05-04T10:48:23.975Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 11,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:48:24.170Z",
+    "updated": "2018-05-04T10:48:24.170Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 12,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:48:24.354Z",
+    "updated": "2018-05-04T10:48:24.354Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 13,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:48:24.535Z",
+    "updated": "2018-05-04T10:48:24.535Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 14,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:48:24.935Z",
+    "updated": "2018-05-04T10:48:24.935Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 15,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:48:25.108Z",
+    "updated": "2018-05-04T10:48:25.108Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 16,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:48:25.307Z",
+    "updated": "2018-05-04T10:48:25.307Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 17,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:48:25.489Z",
+    "updated": "2018-05-04T10:48:25.489Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 18,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:48:25.689Z",
+    "updated": "2018-05-04T10:48:25.689Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 19,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:48:33.975Z",
+    "updated": "2018-05-04T10:48:33.975Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 20,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:48:34.238Z",
+    "updated": "2018-05-04T10:48:34.238Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 21,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:48:34.409Z",
+    "updated": "2018-05-04T10:48:34.409Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 22,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:48:34.609Z",
+    "updated": "2018-05-04T10:48:34.609Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 23,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:48:34.797Z",
+    "updated": "2018-05-04T10:48:34.797Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 24,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:48:35.008Z",
+    "updated": "2018-05-04T10:48:35.008Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 25,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:48:35.185Z",
+    "updated": "2018-05-04T10:48:35.185Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 26,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:48:35.396Z",
+    "updated": "2018-05-04T10:48:35.396Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 27,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:48:35.592Z",
+    "updated": "2018-05-04T10:48:35.592Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 28,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:48:43.970Z",
+    "updated": "2018-05-04T10:48:43.970Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 29,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:48:44.149Z",
+    "updated": "2018-05-04T10:48:44.149Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 30,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:48:44.349Z",
+    "updated": "2018-05-04T10:48:44.349Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 31,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:48:44.549Z",
+    "updated": "2018-05-04T10:48:44.549Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 32,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:48:44.722Z",
+    "updated": "2018-05-04T10:48:44.722Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 33,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:48:44.915Z",
+    "updated": "2018-05-04T10:48:44.915Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 34,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:48:45.099Z",
+    "updated": "2018-05-04T10:48:45.099Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 35,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:48:45.281Z",
+    "updated": "2018-05-04T10:48:45.282Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 36,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:48:45.469Z",
+    "updated": "2018-05-04T10:48:45.469Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 37,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:48:53.972Z",
+    "updated": "2018-05-04T10:48:53.973Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 38,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:48:54.275Z",
+    "updated": "2018-05-04T10:48:54.275Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 39,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:48:54.477Z",
+    "updated": "2018-05-04T10:48:54.477Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 40,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:48:54.666Z",
+    "updated": "2018-05-04T10:48:54.666Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 41,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:48:54.850Z",
+    "updated": "2018-05-04T10:48:54.850Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 42,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:48:55.044Z",
+    "updated": "2018-05-04T10:48:55.044Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 43,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:48:55.228Z",
+    "updated": "2018-05-04T10:48:55.228Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 44,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:48:55.417Z",
+    "updated": "2018-05-04T10:48:55.417Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 45,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:48:55.598Z",
+    "updated": "2018-05-04T10:48:55.598Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 46,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:03.971Z",
+    "updated": "2018-05-04T10:49:03.971Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 47,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:04.259Z",
+    "updated": "2018-05-04T10:49:04.259Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 48,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:04.473Z",
+    "updated": "2018-05-04T10:49:04.473Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 49,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:04.650Z",
+    "updated": "2018-05-04T10:49:04.650Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 50,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:04.828Z",
+    "updated": "2018-05-04T10:49:04.828Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 51,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:04.995Z",
+    "updated": "2018-05-04T10:49:04.995Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 52,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:05.195Z",
+    "updated": "2018-05-04T10:49:05.195Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 53,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:05.383Z",
+    "updated": "2018-05-04T10:49:05.383Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 54,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:05.549Z",
+    "updated": "2018-05-04T10:49:05.549Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 55,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:13.970Z",
+    "updated": "2018-05-04T10:49:13.970Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 56,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:14.158Z",
+    "updated": "2018-05-04T10:49:14.158Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 57,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:14.303Z",
+    "updated": "2018-05-04T10:49:14.303Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 58,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:14.458Z",
+    "updated": "2018-05-04T10:49:14.458Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 59,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:14.668Z",
+    "updated": "2018-05-04T10:49:14.668Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 60,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:14.857Z",
+    "updated": "2018-05-04T10:49:14.857Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 61,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:15.036Z",
+    "updated": "2018-05-04T10:49:15.036Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 62,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:15.189Z",
+    "updated": "2018-05-04T10:49:15.189Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 63,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:15.356Z",
+    "updated": "2018-05-04T10:49:15.356Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 64,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:23.972Z",
+    "updated": "2018-05-04T10:49:23.972Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 65,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:24.198Z",
+    "updated": "2018-05-04T10:49:24.198Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 66,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:24.387Z",
+    "updated": "2018-05-04T10:49:24.387Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 67,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:24.553Z",
+    "updated": "2018-05-04T10:49:24.553Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 68,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:24.719Z",
+    "updated": "2018-05-04T10:49:24.719Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 69,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:24.897Z",
+    "updated": "2018-05-04T10:49:24.897Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 70,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:25.063Z",
+    "updated": "2018-05-04T10:49:25.063Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 71,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:25.249Z",
+    "updated": "2018-05-04T10:49:25.249Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 72,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:25.429Z",
+    "updated": "2018-05-04T10:49:25.429Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 73,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:33.972Z",
+    "updated": "2018-05-04T10:49:33.972Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 74,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:34.150Z",
+    "updated": "2018-05-04T10:49:34.150Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 75,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:34.349Z",
+    "updated": "2018-05-04T10:49:34.349Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 76,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:34.549Z",
+    "updated": "2018-05-04T10:49:34.549Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 77,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:34.715Z",
+    "updated": "2018-05-04T10:49:34.715Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 78,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:34.893Z",
+    "updated": "2018-05-04T10:49:34.893Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 79,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:35.092Z",
+    "updated": "2018-05-04T10:49:35.092Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 80,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:35.270Z",
+    "updated": "2018-05-04T10:49:35.270Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 81,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:35.455Z",
+    "updated": "2018-05-04T10:49:35.455Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 82,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:43.998Z",
+    "updated": "2018-05-04T10:49:43.998Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 83,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:44.622Z",
+    "updated": "2018-05-04T10:49:44.622Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 84,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:44.796Z",
+    "updated": "2018-05-04T10:49:44.796Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 85,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:45.000Z",
+    "updated": "2018-05-04T10:49:45.000Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 86,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:45.188Z",
+    "updated": "2018-05-04T10:49:45.188Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 87,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:45.399Z",
+    "updated": "2018-05-04T10:49:45.399Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 88,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:45.598Z",
+    "updated": "2018-05-04T10:49:45.599Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 89,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:45.798Z",
+    "updated": "2018-05-04T10:49:45.798Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 90,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:45.998Z",
+    "updated": "2018-05-04T10:49:45.998Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 91,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:49:54.210Z",
+    "updated": "2018-05-04T10:49:54.210Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 92,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:49:54.406Z",
+    "updated": "2018-05-04T10:49:54.407Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 93,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:49:54.592Z",
+    "updated": "2018-05-04T10:49:54.592Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 94,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:49:54.783Z",
+    "updated": "2018-05-04T10:49:54.783Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 95,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:49:54.957Z",
+    "updated": "2018-05-04T10:49:54.957Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 96,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:49:55.161Z",
+    "updated": "2018-05-04T10:49:55.161Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 97,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:49:55.360Z",
+    "updated": "2018-05-04T10:49:55.360Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 98,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:49:55.582Z",
+    "updated": "2018-05-04T10:49:55.582Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 99,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:49:55.767Z",
+    "updated": "2018-05-04T10:49:55.768Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 100,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:50:54.067Z",
+    "updated": "2018-05-04T10:50:54.068Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 101,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:50:54.387Z",
+    "updated": "2018-05-04T10:50:54.387Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 102,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:50:54.591Z",
+    "updated": "2018-05-04T10:50:54.591Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 103,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:50:54.798Z",
+    "updated": "2018-05-04T10:50:54.798Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 104,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:50:55.024Z",
+    "updated": "2018-05-04T10:50:55.024Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 105,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:50:55.209Z",
+    "updated": "2018-05-04T10:50:55.209Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 106,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:50:55.533Z",
+    "updated": "2018-05-04T10:50:55.534Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 107,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:50:55.730Z",
+    "updated": "2018-05-04T10:50:55.730Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 108,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:50:55.918Z",
+    "updated": "2018-05-04T10:50:55.918Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 109,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:51:54.067Z",
+    "updated": "2018-05-04T10:51:54.067Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 110,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:51:54.283Z",
+    "updated": "2018-05-04T10:51:54.284Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 111,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:51:54.487Z",
+    "updated": "2018-05-04T10:51:54.487Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 112,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:51:54.665Z",
+    "updated": "2018-05-04T10:51:54.665Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 113,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:51:54.842Z",
+    "updated": "2018-05-04T10:51:54.842Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 114,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:51:55.041Z",
+    "updated": "2018-05-04T10:51:55.042Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 115,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:51:55.242Z",
+    "updated": "2018-05-04T10:51:55.242Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 116,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:51:55.418Z",
+    "updated": "2018-05-04T10:51:55.418Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 117,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:51:55.614Z",
+    "updated": "2018-05-04T10:51:55.614Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 118,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:52:54.073Z",
+    "updated": "2018-05-04T10:52:54.073Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 119,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:52:54.515Z",
+    "updated": "2018-05-04T10:52:54.515Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 120,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:52:54.737Z",
+    "updated": "2018-05-04T10:52:54.737Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 121,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:52:54.956Z",
+    "updated": "2018-05-04T10:52:54.956Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 122,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:52:55.166Z",
+    "updated": "2018-05-04T10:52:55.167Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 123,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:52:55.370Z",
+    "updated": "2018-05-04T10:52:55.371Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 124,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:52:55.603Z",
+    "updated": "2018-05-04T10:52:55.603Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 125,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:52:55.814Z",
+    "updated": "2018-05-04T10:52:55.814Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 126,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:52:56.037Z",
+    "updated": "2018-05-04T10:52:56.037Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 127,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:53:54.065Z",
+    "updated": "2018-05-04T10:53:54.065Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 128,
+  "fields": {
+    "company": 1,
+    "cmp": "115.74",
+    "timestamp": "2018-05-04T10:53:54.290Z",
+    "updated": "2018-05-04T10:53:54.290Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 129,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:53:54.489Z",
+    "updated": "2018-05-04T10:53:54.490Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 130,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:53:54.674Z",
+    "updated": "2018-05-04T10:53:54.674Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 131,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:53:54.888Z",
+    "updated": "2018-05-04T10:53:54.888Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 132,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:53:55.077Z",
+    "updated": "2018-05-04T10:53:55.077Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 133,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:53:55.273Z",
+    "updated": "2018-05-04T10:53:55.273Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 134,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:53:55.499Z",
+    "updated": "2018-05-04T10:53:55.500Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 135,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:53:55.706Z",
+    "updated": "2018-05-04T10:53:55.706Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 136,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:54:54.067Z",
+    "updated": "2018-05-04T10:54:54.067Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 137,
+  "fields": {
+    "company": 1,
+    "cmp": "115.75",
+    "timestamp": "2018-05-04T10:54:54.248Z",
+    "updated": "2018-05-04T10:54:54.248Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 138,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:54:54.441Z",
+    "updated": "2018-05-04T10:54:54.441Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 139,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:54:54.618Z",
+    "updated": "2018-05-04T10:54:54.618Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 140,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:54:54.807Z",
+    "updated": "2018-05-04T10:54:54.807Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 141,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:54:54.981Z",
+    "updated": "2018-05-04T10:54:54.981Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 142,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:54:55.269Z",
+    "updated": "2018-05-04T10:54:55.269Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 143,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:54:55.447Z",
+    "updated": "2018-05-04T10:54:55.447Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 144,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:54:55.661Z",
+    "updated": "2018-05-04T10:54:55.661Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 145,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:55:54.063Z",
+    "updated": "2018-05-04T10:55:54.063Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 146,
+  "fields": {
+    "company": 1,
+    "cmp": "115.75",
+    "timestamp": "2018-05-04T10:55:54.288Z",
+    "updated": "2018-05-04T10:55:54.288Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 147,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:55:54.514Z",
+    "updated": "2018-05-04T10:55:54.514Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 148,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:55:54.725Z",
+    "updated": "2018-05-04T10:55:54.725Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 149,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:55:54.958Z",
+    "updated": "2018-05-04T10:55:54.958Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 150,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:55:55.157Z",
+    "updated": "2018-05-04T10:55:55.157Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 151,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:55:55.353Z",
+    "updated": "2018-05-04T10:55:55.353Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 152,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:55:55.557Z",
+    "updated": "2018-05-04T10:55:55.557Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 153,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:55:55.779Z",
+    "updated": "2018-05-04T10:55:55.779Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 154,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:56:54.065Z",
+    "updated": "2018-05-04T10:56:54.065Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 155,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T10:56:54.310Z",
+    "updated": "2018-05-04T10:56:54.310Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 156,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:56:54.498Z",
+    "updated": "2018-05-04T10:56:54.498Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 157,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:56:54.709Z",
+    "updated": "2018-05-04T10:56:54.709Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 158,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:56:54.909Z",
+    "updated": "2018-05-04T10:56:54.909Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 159,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:56:55.110Z",
+    "updated": "2018-05-04T10:56:55.110Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 160,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:56:55.349Z",
+    "updated": "2018-05-04T10:56:55.350Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 161,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:56:55.549Z",
+    "updated": "2018-05-04T10:56:55.549Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 162,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:56:55.741Z",
+    "updated": "2018-05-04T10:56:55.741Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 163,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:57:54.058Z",
+    "updated": "2018-05-04T10:57:54.058Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 164,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T10:57:54.428Z",
+    "updated": "2018-05-04T10:57:54.428Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 165,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:57:54.860Z",
+    "updated": "2018-05-04T10:57:54.860Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 166,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:57:55.248Z",
+    "updated": "2018-05-04T10:57:55.248Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 167,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:57:55.471Z",
+    "updated": "2018-05-04T10:57:55.471Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 168,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:57:55.693Z",
+    "updated": "2018-05-04T10:57:55.693Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 169,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:57:55.914Z",
+    "updated": "2018-05-04T10:57:55.914Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 170,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:57:56.170Z",
+    "updated": "2018-05-04T10:57:56.170Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 171,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:57:56.365Z",
+    "updated": "2018-05-04T10:57:56.365Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 172,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:58:01.384Z",
+    "updated": "2018-05-04T10:58:01.384Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 173,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T10:58:02.082Z",
+    "updated": "2018-05-04T10:58:02.082Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 174,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:58:02.682Z",
+    "updated": "2018-05-04T10:58:02.682Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 175,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:58:03.248Z",
+    "updated": "2018-05-04T10:58:03.248Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 176,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:58:03.847Z",
+    "updated": "2018-05-04T10:58:03.847Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 177,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:58:04.456Z",
+    "updated": "2018-05-04T10:58:04.456Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 178,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:58:05.100Z",
+    "updated": "2018-05-04T10:58:05.100Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 179,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:58:05.828Z",
+    "updated": "2018-05-04T10:58:05.828Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 180,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:58:06.653Z",
+    "updated": "2018-05-04T10:58:06.653Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 181,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T10:58:28.054Z",
+    "updated": "2018-05-04T10:58:28.054Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 182,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T10:58:28.659Z",
+    "updated": "2018-05-04T10:58:28.659Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 183,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T10:58:29.196Z",
+    "updated": "2018-05-04T10:58:29.196Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 184,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T10:58:29.773Z",
+    "updated": "2018-05-04T10:58:29.773Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 185,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T10:58:30.372Z",
+    "updated": "2018-05-04T10:58:30.372Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 186,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T10:58:31.056Z",
+    "updated": "2018-05-04T10:58:31.056Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 187,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T10:58:31.670Z",
+    "updated": "2018-05-04T10:58:31.670Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 188,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T10:58:32.331Z",
+    "updated": "2018-05-04T10:58:32.332Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 189,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T10:58:32.923Z",
+    "updated": "2018-05-04T10:58:32.924Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 190,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:00:01.397Z",
+    "updated": "2018-05-04T11:00:01.397Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 191,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:00:01.952Z",
+    "updated": "2018-05-04T11:00:01.953Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 192,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:00:02.540Z",
+    "updated": "2018-05-04T11:00:02.540Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 193,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:00:03.117Z",
+    "updated": "2018-05-04T11:00:03.117Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 194,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:00:03.860Z",
+    "updated": "2018-05-04T11:00:03.860Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 195,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:00:04.438Z",
+    "updated": "2018-05-04T11:00:04.438Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 196,
+  "fields": {
+    "company": 9,
+    "cmp": "900.14",
+    "timestamp": "2018-05-04T11:00:05.114Z",
+    "updated": "2018-05-04T11:00:05.114Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 197,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:00:05.735Z",
+    "updated": "2018-05-04T11:00:05.735Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 198,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:00:06.544Z",
+    "updated": "2018-05-04T11:00:06.544Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 199,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:01:27.130Z",
+    "updated": "2018-05-04T11:01:27.130Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 200,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:01:28.129Z",
+    "updated": "2018-05-04T11:01:28.129Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 201,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:01:28.927Z",
+    "updated": "2018-05-04T11:01:28.928Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 202,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:01:29.590Z",
+    "updated": "2018-05-04T11:01:29.590Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 203,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:01:30.193Z",
+    "updated": "2018-05-04T11:01:30.193Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 204,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:01:30.814Z",
+    "updated": "2018-05-04T11:01:30.815Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 205,
+  "fields": {
+    "company": 9,
+    "cmp": "927.59",
+    "timestamp": "2018-05-04T11:01:31.420Z",
+    "updated": "2018-05-04T11:01:31.420Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 206,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:01:31.956Z",
+    "updated": "2018-05-04T11:01:31.956Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 207,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:01:32.545Z",
+    "updated": "2018-05-04T11:01:32.545Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 208,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:02:01.434Z",
+    "updated": "2018-05-04T11:02:01.434Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 209,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:02:02.005Z",
+    "updated": "2018-05-04T11:02:02.005Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 210,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:02:02.631Z",
+    "updated": "2018-05-04T11:02:02.631Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 211,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:02:03.259Z",
+    "updated": "2018-05-04T11:02:03.259Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 212,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:02:03.896Z",
+    "updated": "2018-05-04T11:02:03.896Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 213,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:02:04.524Z",
+    "updated": "2018-05-04T11:02:04.524Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 214,
+  "fields": {
+    "company": 9,
+    "cmp": "927.59",
+    "timestamp": "2018-05-04T11:02:05.216Z",
+    "updated": "2018-05-04T11:02:05.216Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 215,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:02:05.849Z",
+    "updated": "2018-05-04T11:02:05.849Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 216,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:02:06.481Z",
+    "updated": "2018-05-04T11:02:06.481Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 217,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:02:14.446Z",
+    "updated": "2018-05-04T11:02:14.446Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 218,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:02:15.011Z",
+    "updated": "2018-05-04T11:02:15.012Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 219,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:02:15.589Z",
+    "updated": "2018-05-04T11:02:15.589Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 220,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:02:16.244Z",
+    "updated": "2018-05-04T11:02:16.244Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 221,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:02:16.964Z",
+    "updated": "2018-05-04T11:02:16.964Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 222,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:02:17.663Z",
+    "updated": "2018-05-04T11:02:17.664Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 223,
+  "fields": {
+    "company": 9,
+    "cmp": "927.13",
+    "timestamp": "2018-05-04T11:02:18.573Z",
+    "updated": "2018-05-04T11:02:18.574Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 224,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:02:19.416Z",
+    "updated": "2018-05-04T11:02:19.416Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 225,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:02:20.071Z",
+    "updated": "2018-05-04T11:02:20.071Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 226,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:02:48.600Z",
+    "updated": "2018-05-04T11:02:48.600Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 227,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:02:49.248Z",
+    "updated": "2018-05-04T11:02:49.248Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 228,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:02:49.858Z",
+    "updated": "2018-05-04T11:02:49.858Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 229,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:02:50.502Z",
+    "updated": "2018-05-04T11:02:50.502Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 230,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:02:51.100Z",
+    "updated": "2018-05-04T11:02:51.100Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 231,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:02:51.722Z",
+    "updated": "2018-05-04T11:02:51.722Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 232,
+  "fields": {
+    "company": 9,
+    "cmp": "922.49",
+    "timestamp": "2018-05-04T11:02:52.409Z",
+    "updated": "2018-05-04T11:02:52.409Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 233,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:02:53.093Z",
+    "updated": "2018-05-04T11:02:53.093Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 234,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:02:53.741Z",
+    "updated": "2018-05-04T11:02:53.741Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 235,
+  "fields": {
+    "company": 2,
+    "cmp": "120.00",
+    "timestamp": "2018-05-04T11:33:52.086Z",
+    "updated": "2018-05-04T11:33:52.087Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 236,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:33:52.718Z",
+    "updated": "2018-05-04T11:33:52.719Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 237,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:33:53.418Z",
+    "updated": "2018-05-04T11:33:53.418Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 238,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:33:54.016Z",
+    "updated": "2018-05-04T11:33:54.016Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 239,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:33:54.593Z",
+    "updated": "2018-05-04T11:33:54.593Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 240,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:33:55.137Z",
+    "updated": "2018-05-04T11:33:55.137Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 241,
+  "fields": {
+    "company": 9,
+    "cmp": "922.49",
+    "timestamp": "2018-05-04T11:33:55.968Z",
+    "updated": "2018-05-04T11:33:55.969Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 242,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:33:56.590Z",
+    "updated": "2018-05-04T11:33:56.590Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 243,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:33:57.144Z",
+    "updated": "2018-05-04T11:33:57.145Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 244,
+  "fields": {
+    "company": 2,
+    "cmp": "120.02",
+    "timestamp": "2018-05-04T11:34:23.759Z",
+    "updated": "2018-05-04T11:34:23.759Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 245,
+  "fields": {
+    "company": 1,
+    "cmp": "115.78",
+    "timestamp": "2018-05-04T11:34:24.414Z",
+    "updated": "2018-05-04T11:34:24.414Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 246,
+  "fields": {
+    "company": 3,
+    "cmp": "175.36",
+    "timestamp": "2018-05-04T11:34:25.002Z",
+    "updated": "2018-05-04T11:34:25.002Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 247,
+  "fields": {
+    "company": 5,
+    "cmp": "260.11",
+    "timestamp": "2018-05-04T11:34:25.645Z",
+    "updated": "2018-05-04T11:34:25.645Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 248,
+  "fields": {
+    "company": 4,
+    "cmp": "250.21",
+    "timestamp": "2018-05-04T11:34:26.266Z",
+    "updated": "2018-05-04T11:34:26.266Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 249,
+  "fields": {
+    "company": 6,
+    "cmp": "300.33",
+    "timestamp": "2018-05-04T11:34:27.009Z",
+    "updated": "2018-05-04T11:34:27.009Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 250,
+  "fields": {
+    "company": 9,
+    "cmp": "922.49",
+    "timestamp": "2018-05-04T11:34:27.620Z",
+    "updated": "2018-05-04T11:34:27.620Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 251,
+  "fields": {
+    "company": 7,
+    "cmp": "700.21",
+    "timestamp": "2018-05-04T11:34:28.207Z",
+    "updated": "2018-05-04T11:34:28.207Z"
+  }
+},
+{
+  "model": "market.companycmprecord",
+  "pk": 252,
+  "fields": {
+    "company": 8,
+    "cmp": "750.21",
+    "timestamp": "2018-05-04T11:34:29.235Z",
+    "updated": "2018-05-04T11:34:29.235Z"
   }
 }
 ]

@@ -49,7 +49,7 @@ def deduct_interest(request):
 
 class NewsView(LoginRequiredMixin, CountNewsMixin, ListView):
     template_name = 'accounts/news.html'
-    queryset = News.objects.all()
+    queryset = News.objects.filter(is_active=True)
 
 
 class LoanView(LoginRequiredMixin, CountNewsMixin, View):
