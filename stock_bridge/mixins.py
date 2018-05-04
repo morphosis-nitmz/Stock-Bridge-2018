@@ -13,7 +13,7 @@ from accounts.models import News
 class CountNewsMixin(object):
 
     def dispatch(self, request, *args, **kwargs):
-        request.session['news'] = News.objects.all().count()
+        request.session['news'] = News.objects.filter(is_active=True).count()
         return super(CountNewsMixin, self).dispatch(request, *args, **kwargs)
 
 
