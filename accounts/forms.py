@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
@@ -151,6 +153,12 @@ class RegisterForm(forms.ModelForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError("Passwords don't match")
         return password2
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if not re.match(r'^\w\_+$', username):
+            raise forms.ValidationError('username can contain only alphabets, numbers and underscores')
+        return username
 
     def save(self, commit=True):
         # Save the provided password in hashed format

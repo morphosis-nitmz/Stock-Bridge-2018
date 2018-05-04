@@ -25,7 +25,7 @@
                 <thead>
                     <tr>
                         <th class="text-center">Rank</th>
-                        <th class="text-center">Username</th>
+                        <th class="text-center">Name</th>
                         <th class="text-center">Net Worth</th>
                     </tr>
                 </thead>
@@ -36,16 +36,16 @@
                                 <td class="text-center">{{ forloop.counter }}</td>
                                 <td class="text-center">
                                     <a href="{% url 'profile' object.0 %}">
-                                        {{ object.0 }}
+                                        {{ object.1 }}
                                     </a>
                                 </td>
-                                <td class="text-center">&#8377; {{ object.1 }}</td>
+                                <td class="text-center">&#8377; {{ object.2 }}</td>
                             </tr>
                         {% else %}
                             <tr>
                                 <td class="text-center">{{ forloop.counter }}</td>
-                                <td class="text-center">{{ object.0 }}</td>
-                                <td class="text-center">&#8377; {{ object.1 }}</td>
+                                <td class="text-center">{{ object.1 }}</td>
+                                <td class="text-center">&#8377; {{ object.2 }}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}

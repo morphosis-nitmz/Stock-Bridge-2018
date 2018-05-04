@@ -151,7 +151,7 @@ class User(AbstractBaseUser):
         self.save()
 
     def deduct_interest(self):
-        amount = (self.loan * (Decimal(1.0) + RATE_OF_INTEREST)) / Decimal(12.0)  # After 1 month
+        amount = (self.loan * (Decimal(1.0) + RATE_OF_INTEREST))  # After 1 year
         compound_interest = abs(amount - self.loan)
         self.cash -= compound_interest
         self.save()

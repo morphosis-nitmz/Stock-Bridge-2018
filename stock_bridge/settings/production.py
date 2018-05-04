@@ -43,8 +43,8 @@ RATE_OF_INTEREST = Decimal(0.15)  # 15%
 TAX_RATE = Decimal(0.40)  # 40%
 
 # Global settings
-START_TIME = datetime(2018, 5, 3, 10, 30, 0)
-STOP_TIME = datetime(2018, 5, 4, 1, 30, 0)
+START_TIME = datetime(2018, 5, 4, 19, 30, 0)
+STOP_TIME = datetime(2018, 5, 5, 2, 00, 0)
 
 
 # Application definition

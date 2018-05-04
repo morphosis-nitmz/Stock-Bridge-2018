@@ -68,14 +68,14 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
                 if user.issue_loan():
                     messages.success(request, 'Loan has been issued.')
                 else:
-                    messages.error(request, 'You can issue loan atmost 5 times a day!')
+                    messages.error(request, 'You can issue loan only 1 time!')
             elif mode == 'pay':
                 if user.pay_installment():
                     messages.success(request, 'Installment paid!')
                 else:
                     messages.error(
                         request,
-                        'Minimum installment amount has to be INR 10,000 and you should have sufficient balance.'
+                        'Minimum installment amount has to be INR 5,000 and you should have sufficient balance.'
                     )
         else:
             msg = 'The market will be live from {start} to {stop}'.format(
@@ -118,8 +118,8 @@ class LeaderBoardView(CountNewsMixin, View):
         user_qs = User.objects.all()
         for user in user_qs:
             net_worth = InvestmentRecord.objects.calculate_net_worth(user)
-            data.append((user.username, net_worth, user.coeff_of_variation))
-        data = sorted(data, key=lambda d: (-d[1], d[2]))
+            data.append((user.username, user.full_name, net_worth, user.coeff_of_variation))
+        data = sorted(data, key=lambda d: (-d[2], d[3]))
         return render(request, 'accounts/leaderboard.html', {'data': data})
 
 

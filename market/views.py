@@ -43,6 +43,7 @@ def update_market(request):
         company_qs = Company.objects.all()
         for company in company_qs:
             company.update_cmp()
+            obj = CompanyCMPRecord.objects.create(company=company, cmp=company.cmp)
         return HttpResponse('cmp updated')
     return redirect('/')
 
