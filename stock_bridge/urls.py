@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
-    url(r'^profile/(?P<username>[a-zA-Z0-9_@#\- ]+)/$', ProfileView.as_view(), name='profile'),
+    url(r'^profile/(?P<username>[a-zA-Z0-9]+)/$', ProfileView.as_view(), name='profile'),
     url(r'^news/$', NewsView.as_view(), name='news'),
     url(r'^account/', include('accounts.urls', namespace='account')),
     url(r'^accounts/', include('accounts.passwords.urls')),
