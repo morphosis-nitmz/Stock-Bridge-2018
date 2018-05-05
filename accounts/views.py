@@ -15,11 +15,13 @@ from django.core.urlresolvers import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation, News
-from stock_bridge.mixins import (AnonymousRequiredMixin,
-                                 RequestFormAttachMixin,
-                                 NextUrlMixin,
-                                 LoginRequiredMixin,
-                                 CountNewsMixin)
+from stock_bridge.mixins import (
+    AnonymousRequiredMixin,
+    RequestFormAttachMixin,
+    NextUrlMixin,
+    LoginRequiredMixin,
+    CountNewsMixin
+)
 from market.models import InvestmentRecord
 
 
@@ -31,6 +33,7 @@ STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
 @login_required
 def cancel_loan(request):
+    """ Deduct entire loan amount from user's balance """
     if request.user.is_superuser:
         for user in User.objects.all():
             user.cancel_loan()
@@ -40,6 +43,7 @@ def cancel_loan(request):
 
 @login_required
 def deduct_interest(request):
+    """ Deduct interest from user's balance """
     if request.user.is_superuser:
         for user in User.objects.all():
             user.deduct_interest()
@@ -61,7 +65,7 @@ class LoanView(LoginRequiredMixin, CountNewsMixin, View):
 
     def post(self, request, *args, **kwargs):
         current_time = timezone.make_aware(datetime.now())
-        if current_time >= START_TIME and current_time <= STOP_TIME:
+        if current_time >= START_TIME and current_time <= STOP_TIME:  # transaction has to be within game time
             mode = request.POST.get('mode')
             user = request.user
             if mode == 'issue':
@@ -91,6 +95,7 @@ class ProfileView(LoginRequiredMixin, CountNewsMixin, DetailView):
     template_name = 'accounts/profile.html'
 
     def dispatch(self, request, *args, **kwargs):
+        # only the user himself can view his own profile
         if request.user.username != kwargs.get('username'):
             return redirect('/')
         return super(ProfileView, self).dispatch(request, *args, **kwargs)

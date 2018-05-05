@@ -27,6 +27,7 @@ STOP_TIME = timezone.make_aware(getattr(settings, 'STOP_TIME'))
 
 @login_required
 def deduct_tax(request):
+    """ Deduct income tax """
     if request.user.is_superuser:
         for user in User.objects.all():
             tax = user.cash * Decimal(0.4)
@@ -38,6 +39,7 @@ def deduct_tax(request):
 
 @login_required
 def update_market(request):
+    """ Update company's cmp after applying formula """
     if request.user.is_superuser:
         # update company cmp data
         company_qs = Company.objects.all()
@@ -49,6 +51,7 @@ def update_market(request):
 
 
 class CompanyAdminCompanyUpdateView(AdminRequiredMixin, View):
+    """ View for admin to change company's CMP """
 
     def get(self, request, *args, **kwargs):
         company = Company.objects.get(code=kwargs.get('code'))
@@ -86,7 +89,7 @@ class CompanySelectionView(LoginRequiredMixin, CountNewsMixin, View):
         })
 
 
-class CompanyCMPChartData(APIView):
+class CompanyCMPChartData(APIView):  # used django rest framework
     authentication_classes = []
     permission_classes = []
 

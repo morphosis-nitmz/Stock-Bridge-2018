@@ -11,6 +11,7 @@ from accounts.models import News
 
 
 class CountNewsMixin(object):
+    """ Count current news amount for display in navbar """
 
     def dispatch(self, request, *args, **kwargs):
         request.session['news'] = News.objects.filter(is_active=True).count()

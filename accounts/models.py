@@ -72,9 +72,9 @@ class User(AbstractBaseUser):
     full_name = models.CharField(max_length=255, blank=True, null=True)
     cash = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
     loan = models.DecimalField(max_digits=20, decimal_places=2, default=DEFAULT_LOAN_AMOUNT)
-    loan_count = models.IntegerField(default=1)
-    loan_count_absolute = models.IntegerField(default=1)
-    coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
+    loan_count = models.IntegerField(default=1)  # For arithmetic interest calculation
+    loan_count_absolute = models.IntegerField(default=1)  # For overall loan issue count
+    coeff_of_variation = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)  # For tie breaker in leaderboard
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -270,7 +270,7 @@ post_save.connect(post_save_user_create_receiver, sender=User)
 class News(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)  # Inactive news won't appear in dashboard
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

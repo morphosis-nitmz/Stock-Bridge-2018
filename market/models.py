@@ -23,15 +23,15 @@ CAP_TYPES = (
 class Company(models.Model):
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=20, unique=True)
-    cap = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
+    cap = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)  # Company's worth
     cmp = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
-    change = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    change = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)  # Company's change in cmp w.r.t last price
     stocks_offered = models.IntegerField(default=0)
     stocks_remaining = models.IntegerField(default=stocks_offered)
     cap_type = models.CharField(max_length=20, choices=CAP_TYPES, blank=True, null=True)
     industry = models.CharField(max_length=120, blank=True, null=True)
-    temp_stocks_bought = models.IntegerField(default=0)
-    temp_stocks_sold = models.IntegerField(default=0)
+    temp_stocks_bought = models.IntegerField(default=0)  # Refresh after every CMP update
+    temp_stocks_sold = models.IntegerField(default=0)  # Refresh after every CMP update
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -42,9 +42,11 @@ class Company(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        """ URL for user market transaction """
         return reverse('market:transaction', kwargs={'code': self.code})
 
     def get_absolute_admin_url(self):
+        """ URL for admin change """
         return reverse('market:admin', kwargs={'code': self.code})
 
     def get_cap(self):
@@ -56,6 +58,7 @@ class Company(models.Model):
         return 'Large Cap'
 
     def calculate_change(self, old_price):
+        """ Calculate CMP change """
         print('old', old_price)
         self.change = ((self.cmp - old_price) / old_price) * Decimal(100.00)
         print(self.change)
@@ -137,7 +140,7 @@ class Transaction(models.Model):
     num_stocks = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     mode = models.CharField(max_length=10, choices=TRANSACTION_MODES)
-    user_net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
+    user_net_worth = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)  # user's net worth after current transaction
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -244,6 +247,7 @@ post_save.connect(post_save_user_create_receiver, sender=User)
 
 
 class CompanyCMPRecord(models.Model):
+    """ This model is used for keeping record of company's cmp in order to use Chart.js """
     company = models.ForeignKey(Company)
     cmp = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     timestamp = models.DateTimeField(auto_now_add=True)
