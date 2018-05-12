@@ -135,8 +135,8 @@ class TransactionManager(models.Manager):
 
 
 class Transaction(models.Model):
-    user = models.ForeignKey(User)
-    company = models.ForeignKey(Company)
+    user = models.ForeignKey(User, on_delete=True)
+    company = models.ForeignKey(Company, on_delete=True)
     num_stocks = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     mode = models.CharField(max_length=10, choices=TRANSACTION_MODES)
@@ -215,8 +215,8 @@ class InvestmentRecordManager(models.Manager):
 
 
 class InvestmentRecord(models.Model):
-    user = models.ForeignKey(User)
-    company = models.ForeignKey(Company)
+    user = models.ForeignKey(User, on_delete=True)
+    company = models.ForeignKey(Company, on_delete=True)
     stocks = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True)
 
@@ -248,7 +248,7 @@ post_save.connect(post_save_user_create_receiver, sender=User)
 
 class CompanyCMPRecord(models.Model):
     """ This model is used for keeping record of company's cmp in order to use Chart.js """
-    company = models.ForeignKey(Company)
+    company = models.ForeignKey(Company, on_delete=True)
     cmp = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

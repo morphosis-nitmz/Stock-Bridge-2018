@@ -11,7 +11,7 @@ from django.views.generic.edit import FormMixin
 from django.utils.safestring import mark_safe
 from django.utils import timezone
 from django.utils.decorators import method_decorator
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from .forms import LoginForm, RegisterForm, ReactivateEmailForm
 from .models import EmailActivation, News

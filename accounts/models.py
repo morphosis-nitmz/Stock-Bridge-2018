@@ -9,7 +9,7 @@ from django.db.models.signals import pre_save, post_save
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
 from django.core.mail import send_mail
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.loader import get_template
 
 from stock_bridge.utils import unique_key_generator
@@ -195,7 +195,7 @@ class EmailActivationManager(models.Manager):
 
 
 class EmailActivation(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=True)
     email = models.EmailField()
     key = models.CharField(max_length=120, blank=True, null=True)  # activation key
     activated = models.BooleanField(default=False)
